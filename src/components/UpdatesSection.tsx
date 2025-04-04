@@ -6,7 +6,6 @@ import {
     Card,
     CardContent,
     CardMedia,
-    Button,
   } from "@mui/material";
   import Slider from "react-slick";
   import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
