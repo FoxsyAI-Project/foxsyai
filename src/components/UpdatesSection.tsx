@@ -13,7 +13,7 @@ import {
   import OrangeLine from "./OrangeLine";
   
   const updates = new Array(6).fill({
-    title: "Update title",
+    title: "Update title text",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
     image: foxImg,
