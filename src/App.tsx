@@ -3,7 +3,7 @@ import './App.css';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import VisionSection from './components/VisionSection';
-import { ThemeProvider, CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import theme from "./theme/theme";
 import ProductsSection from './components/ProductsSection';
 import RoboCupSection from './components/RoboCupSection';
