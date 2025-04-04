@@ -3,12 +3,6 @@ import FoxMascot from "../assets/images/foxMascot.png";
 import OrangeLine from "./OrangeLine";
 import ArrowUpRight from "../assets/images/arrow-up-right.svg";
 
-const cardStyle = {
-  flex: "1 1 250px",
-  minWidth: "250px",
-  margin: "12px",
-};
-
 const FoxsyTokenSection = () => {
   return (
     <Box sx={{ bgcolor: "#fff", py: 10 }}>
