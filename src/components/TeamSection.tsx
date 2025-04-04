@@ -9,8 +9,6 @@ import {
   useMediaQuery,
   IconButton,
 } from "@mui/material";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import XIcon from "@mui/icons-material/Close";
 import teamImage from "../assets/images/team.png";
 import sebastianImage from "../assets/images/sebastianImage.png";
 import dorinImage from "../assets/images/dorinImage.png";
