@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/foxsyai/static/css/main.7d74cae8.css",
-    "main.js": "/foxsyai/static/js/main.4ace8bec.js",
+    "main.js": "/foxsyai/static/js/main.45c6ee9a.js",
     "static/media/hero-image.png": "/foxsyai/static/media/hero-image.d6b12c192b9b60e65856.png",
+    "static/media/hero-image-mobile.jpg": "/foxsyai/static/media/hero-image-mobile.4f1e17bb16bc6291eefc.jpg",
     "static/media/foxMascot.png": "/foxsyai/static/media/foxMascot.ad94e02e843ae2070b25.png",
     "static/media/robot-lifecycle.png": "/foxsyai/static/media/robot-lifecycle.30a810b82f8a12999f2d.png",
     "static/media/team.png": "/foxsyai/static/media/team.7785a6e07e099c26b5fb.png",
@@ -10,6 +11,7 @@
     "static/media/roboCup.png": "/foxsyai/static/media/roboCup.33a295980aa16b2d8183.png",
     "static/media/foxDroid.png": "/foxsyai/static/media/foxDroid.1e12f4e32021b597c346.png",
     "static/media/eindhoven.jpg": "/foxsyai/static/media/eindhoven.1d8fef6aee89cdee0d1c.jpg",
+    "static/media/aboutSection.png": "/foxsyai/static/media/aboutSection.0587b19586e3675eb125.png",
     "static/media/foxFly.png": "/foxsyai/static/media/foxFly.61069442ee83bc633736.png",
     "static/media/foxLeague.jpg": "/foxsyai/static/media/foxLeague.95aec36c760c488e46cb.jpg",
     "static/media/foxStore.jpg": "/foxsyai/static/media/foxStore.41e0e1cc8a2b7708bfc7.jpg",
@@ -101,12 +103,13 @@
     "static/media/tiktok.svg": "/foxsyai/static/media/tiktok.02e516fbe7d738679e0902f9a611cc99.svg",
     "index.html": "/foxsyai/index.html",
     "static/media/x.svg": "/foxsyai/static/media/x.443e2d7393224e1bfdc28b55d49e909c.svg",
+    "static/media/flash.svg": "/foxsyai/static/media/flash.acd097dd30c498a818c1ea2636d0623f.svg",
     "static/media/arrow-up-right.svg": "/foxsyai/static/media/arrow-up-right.27346c302e61ff1a262b0a6cdf598c2c.svg",
     "main.7d74cae8.css.map": "/foxsyai/static/css/main.7d74cae8.css.map",
-    "main.4ace8bec.js.map": "/foxsyai/static/js/main.4ace8bec.js.map"
+    "main.45c6ee9a.js.map": "/foxsyai/static/js/main.45c6ee9a.js.map"
   },
   "entrypoints": [
     "static/css/main.7d74cae8.css",
-    "static/js/main.4ace8bec.js"
+    "static/js/main.45c6ee9a.js"
   ]
 }
