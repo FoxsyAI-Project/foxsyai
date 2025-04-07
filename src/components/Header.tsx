@@ -8,11 +8,9 @@ import {
   IconButton,
   Drawer,
   List,
-  ListItem,
   ListItemText,
   ListItemButton,
   Collapse,
-  ListItemIcon,
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
