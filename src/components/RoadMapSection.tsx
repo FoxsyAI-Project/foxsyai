@@ -44,7 +44,7 @@ const RoadmapSection = () => {
       <Container>
         <Box sx={{ mb: 6 }}>
           <OrangeLine />
-          <Typography variant="h4" fontWeight={800}>
+          <Typography variant="subHeading1" color="primary.dark">
             Roadmap 2025
           </Typography>
         </Box>
@@ -65,19 +65,21 @@ const RoadmapSection = () => {
                 p: 3,
                 borderRadius: 3,
                 backgroundColor: "#fff",
+                display: "flex",
+                flexDirection: "column",
               }}
+
             >
               <Typography
-                variant="h6"
-                fontWeight={700}
-                sx={{ color: "#EA3807" }}
+                variant="captionH1"
+                color="primary.main"
               >
                 {item.quarter}
               </Typography>
-              <Typography variant="subtitle1" fontWeight={700}>
+              <Typography variant="subHeading3" color="primary.dark">
                 {item.title}
               </Typography>
-              <Typography variant="body2" sx={{ mt: 1, color: "#444" }}>
+              <Typography variant="para12" color="grey.300" sx={{ mt: 1 }}>
                 {item.desc}
               </Typography>
             </Paper>
@@ -101,9 +103,8 @@ const RoadmapSection = () => {
             }}
           >
             <Typography
-              variant="h6"
-              fontWeight={700}
-              sx={{ color: "#EA3807", mb: 2 }}
+              variant="captionH1"
+             color="primary.main"
             >
               Q4
             </Typography>
@@ -116,21 +117,21 @@ const RoadmapSection = () => {
                 flexWrap: "wrap",
               }}
             >
-              <Box sx={{ flex: 1, minWidth: "250px" }}>
-                <Typography variant="subtitle1" fontWeight={700}>
+              <Box sx={{ flex: 1, minWidth: "250px", display:"flex", flexDirection: "column" }}>
+                <Typography variant="subHeading3" color="primary.dark">
                   FoxStore
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#444", mt: 1 }}>
+                <Typography variant="para12" sx={{ mt: 1 }} color="grey.300">
                   First store build on top of the FoxLeague platform.
                   Customising, Burning, Rewarding and Growing the Ecosystem. All
                   in one.
                 </Typography>
               </Box>
-              <Box sx={{ flex: 1, minWidth: "250px" }}>
-                <Typography variant="subtitle1" fontWeight={700}>
+              <Box sx={{ flex: 1, minWidth: "250px", display:"flex", flexDirection: "column" }}>
+                <Typography  variant="subHeading3" color="primary.dark">
                   Analysis and Inception
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#444", mt: 1 }}>
+                <Typography variant="para12" sx={{ mt: 1 }} color="grey.300">
                   Small Size League - our first real hardware soccer player
                   robots, scheduled to go live in 2026.
                 </Typography>

@@ -7,6 +7,9 @@ import {
   Button,
 } from "@mui/material";
 import roboCup from "../assets/images/roboCup.png";
+import OrangeLine from "./OrangeLine";
+import flashImage from "../assets/images/flash.svg";
+import { useTheme } from "@mui/material/styles";
 
 const TARGET_DATE = new Date("2025-07-15T00:00:00");
 
@@ -24,6 +27,7 @@ const getTimeLeft = () => {
 
 const RoboCupSection = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+  const theme = useTheme();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -39,27 +43,33 @@ const RoboCupSection = () => {
         
         {/* Text Section */}
         <Box sx={{ flex: 1 }}>
-          <Typography variant="h4" fontWeight={700}>
+          <OrangeLine />
+          <Typography variant="subHeading1" sx={{ color: "primary.dark"}}>
             RoboCup
           </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ mt: 1 }}>
+          <br />
+          <Typography variant="captionH1" color="primary.dark" sx={{ mt: 1 }}>
             A team of fully autonomous humanoid robot soccer players
           </Typography>
 
-          <Typography variant="subtitle2" sx={{ mt: 2, fontWeight: 600, display: "flex", alignItems: "center", color: "#EA3807" }}>
-          
+          <Typography variant="subHeading3" sx={{ display: "flex", alignItems: "center", color: "primary.dark" }}>
+            <img
+              src={flashImage}
+              alt="RoboCup official goal"
+              style={{ marginRight: "5px" }}
+            />
             RoboCup official goal
           </Typography>
 
-          <Typography sx={{ mt: 1 }}>
+          <Typography sx={{ mt: 1, color:"grey.300" }} variant="para16">
             “By the middle of the 21st century, a team of fully autonomous humanoid robot soccer players shall win a soccer game, complying with the official rules of FIFA, against the winner of the most recent World Cup.”
           </Typography>
 
-          <Typography sx={{ mt: 2 }}>
-            RoboCup aims for autonomous robots to defeat World Cup champions by 2050. Foxsy AI team members have excelled in RoboCup, winning multiple top positions in over 22 years of participation. <strong style={{ color: "#EA3807" }}>Foxsy AI is using blockchain technologies to engage a broad audience.</strong> Their massive creative input will accelerate progress towards RoboCup’s goals.
+          <Typography sx={{ mt: 2,color:"grey.300" }} variant="para16">
+            RoboCup aims for autonomous robots to defeat World Cup champions by 2050. Foxsy AI team members have excelled in RoboCup, winning multiple top positions in over 22 years of participation.<Typography component="span" variant="para16" sx={{ color: 'primary.main' }}> Foxsy AI is using blockchain technologies to engage a broad audience.</Typography> Their massive creative input will accelerate progress towards RoboCup’s goals.
           </Typography>
-
-          <Typography sx={{ mt: 2 }}>
+          <br />
+          <Typography sx={{ mt: 2, color:"grey.300" }} variant="para16">
             From July 15th to 21st, 2025, Brazil will host RoboCup 2025 in Salvador, Bahia.
           </Typography>
         </Box>
@@ -87,18 +97,34 @@ const RoboCupSection = () => {
           }}
         >
           <Box>
-            <Typography variant="subtitle1" color="text.secondary">
+            <Typography variant="para20" color="primary.dark">
               Kick starts
             </Typography>
-            <Typography variant="h4" sx={{ fontWeight: 700, color:"secondary.main" }}>
+            <br />
+            <Typography variant="extra1" sx={{ color:"secondary.main" }}>
               {`${timeLeft.days}:${String(timeLeft.hours).padStart(2, "0")}:${String(timeLeft.minutes).padStart(2, "0")}:${String(timeLeft.seconds).padStart(2, "0")}`}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <br />
+            <Typography variant="para14" color="grey.300">
               We are excited to welcome you and share this incredible experience together. See you there!
             </Typography>
           </Box>
 
-          <Button variant="contained" color="error" sx={{ textTransform: "none" }}>
+          <Button
+                variant="contained"
+                sx={{
+                  ...theme.typography.b1,
+                  bgcolor: theme.palette.primary.main,
+                  color: "#fff",
+                  borderRadius: "999px",
+                  textTransform: "none",
+                  px: 4,
+                  py: 1.5,
+                  "&:hover": { bgcolor: "#d23100" },
+                  alignSelf: "flex-end",
+                  mt: { xs: 3, md: 0 }, // stack on small screens
+                }}
+              >
             More →
           </Button>
         </Paper>

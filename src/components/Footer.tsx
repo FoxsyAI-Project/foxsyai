@@ -18,7 +18,7 @@ const Footer = () => {
           alt="Foxsy AI"
           sx={{ height: 40 }}
         />
-        <Typography variant="body2" sx={{ mt: { xs: 2, sm: 0 }, textAlign: { xs: "center", sm: "right" } }}>
+        <Typography variant="para12" sx={{ mt: { xs: 2, sm: 0 }, textAlign: { xs: "center", sm: "right" } }}>
           © All Rights Reserved. FOXSY AI. | contact@foxsy.ai
         </Typography>
       </Container>

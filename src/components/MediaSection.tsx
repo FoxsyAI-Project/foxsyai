@@ -49,7 +49,7 @@ import {
         <Container>
           <Box sx={{ mb: 4 }}>
             <OrangeLine />
-            <Typography variant="h5" fontWeight={700}>
+            <Typography variant="subHeading1">
               Media
             </Typography>
           </Box>

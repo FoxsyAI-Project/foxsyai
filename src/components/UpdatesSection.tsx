@@ -44,7 +44,7 @@ import {
         <Container>
           <Box sx={{ mb: 4 }}>
             <OrangeLine />
-            <Typography variant="h4" fontWeight={700}>
+            <Typography variant="subHeading1">
               Updates
             </Typography>
           </Box>
@@ -69,10 +69,12 @@ import {
                     sx={{ height: 200, objectFit: "cover" }}
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography variant="subtitle1" fontWeight={700} gutterBottom>
+                    <Typography variant="b1" color="grey.100" gutterBottom>
                       {item.title}
                     </Typography>
-                    <Typography variant="body2" color="#ccc">
+                    <br/>
+                    <br/>
+                    <Typography variant="para12" color="grey.200">
                       {item.description}
                     </Typography>
                     <Box sx={{ mt: 2, display: "flex", justifyContent: "flex-end" }}>

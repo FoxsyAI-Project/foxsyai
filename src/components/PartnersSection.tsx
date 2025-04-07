@@ -47,7 +47,7 @@ const PartnersSection = () => {
       <Container>
         <Box sx={{ mb: 4 }}>
          <OrangeLine />
-          <Typography variant="h5" fontWeight={700}>
+          <Typography variant="subHeading1">
             Partners
           </Typography>
         </Box>
@@ -56,7 +56,11 @@ const PartnersSection = () => {
         <Box
   sx={{
     display: "grid",
-    gridTemplateColumns: "repeat(9, 1fr)",
+    gridTemplateColumns: {
+      xs: "repeat(4, 1fr)",   // 6 logos per row on mobile
+      sm: "repeat(4, 1fr)",
+      md: "repeat(9, 1fr)",   // 9 on medium and larger screens
+    },
     gap: 4,
     justifyItems: "center",
     alignItems: "center",

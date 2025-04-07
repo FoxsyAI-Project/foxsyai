@@ -71,16 +71,16 @@ const TeamSection = () => {
             mb: 6,
           }}
         >
-          <Box maxWidth={isMobile ? "100%" : "60%"}>
+          <Box maxWidth={isMobile ? "100%" : "60%"} display="flex" flexDirection="column">
             <Box sx={{ width: 40, height: 4, bgcolor: "#EA3807", mb: 2 }} />
-            <Typography variant="h4" fontWeight={700} gutterBottom>
+            <Typography variant="subHeading1" gutterBottom>
               Team
             </Typography>
-            <Typography variant="h6" fontWeight={500}>
+            <Typography variant="subHeading3" color="primary.dark">
               Our passionate and diverse robotics team is driven by innovation,
               blending expertise in AI, automation, and engineering.
             </Typography>
-            <Typography variant="body1" sx={{ color: "#555", mt: 2 }}>
+            <Typography variant="para14" sx={{ color: "grey.300", mt: 2 }}>
               With limitless energy and creativity, we are pushing the
               boundaries of robotics through collaboration and cutting-edge
               solutions. With a shared vision as our foundation, we design
@@ -128,22 +128,24 @@ const TeamSection = () => {
               <Avatar
                 src={member.image}
                 alt={member.name}
-                sx={{ width: 80, height: 80 }}
+                sx={{ width: 80, height: 80, borderRadius: "10px"}}
               />
               <CardContent sx={{ px: 0 }}>
                 <Typography
-                  variant="subtitle1"
-                  fontWeight={700}
-                  sx={{ color: "#EA3807" }}
+                  variant="subHeading3"
+                  sx={{ color: theme.palette.primary.main, }}
                 >
                   {member.name}
                 </Typography>
-                <Typography variant="body2" fontWeight={600} sx={{ mb: 1 }}>
+                <br />
+                <Typography variant="link14" sx={{ mb: 1 }} color="grey.300">
                   {member.title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#555" }}>
+                <br />
+                <Typography variant="para12" color="grey.300">
                   {member.description}
                 </Typography>
+                <br />
                 <Box
                   sx={{
                     mt: 2,
