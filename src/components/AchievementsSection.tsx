@@ -101,7 +101,7 @@ import OrangeLine from "./OrangeLine";
         <Container>
           <Box sx={{ mb: 4 }}>
             <OrangeLine />
-            <Typography variant="h5" fontWeight={700}>
+            <Typography variant="subHeading1">
               Achievements
             </Typography>
           </Box>
@@ -132,10 +132,12 @@ import OrangeLine from "./OrangeLine";
                     sx={{ height: "70%", objectFit: "cover", width: "100%" }}
                   />
                   <Box sx={{ p: 2 }}>
-                    <Typography variant="body2">
+                    <Typography variant="b1">
                       {item.year} - {item.location}
                     </Typography>
-                    <Typography variant="caption" sx={{ opacity: 0.7 }}>
+                    <br/>
+                    <br/>
+                    <Typography variant="para12" sx={{ opacity: 0.7 }}>
                       {item.subtitle}
                     </Typography>
                   </Box>

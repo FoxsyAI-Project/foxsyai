@@ -10,6 +10,7 @@ import {
   import AddIcon from "@mui/icons-material/Add";
   import RemoveIcon from "@mui/icons-material/Remove";
   import { useState } from "react";
+  import { useTheme } from "@mui/material/styles";
   
   const allFaqs = [
     {
@@ -50,7 +51,8 @@ import {
   const FaqSection = () => {
     const [expanded, setExpanded] = useState<number | false>(1);
     const [showAll, setShowAll] = useState(false);
-  
+    const theme = useTheme();
+
     const handleChange = (panel: number) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
@@ -63,7 +65,7 @@ import {
           {/* Header */}
           <Box sx={{ mb: 4 }}>
             <Box sx={{ width: 40, height: 4, bgcolor: "#EA3807", mb: 2 }} />
-            <Typography variant="h5" fontWeight={700}>
+            <Typography variant="subHeading1">
               Everything you need to know
             </Typography>
           </Box>
@@ -92,12 +94,12 @@ import {
                 }
                 aria-controls={`panel${i}-content`}
                 id={`panel${i}-header`}
-                sx={{ fontWeight: expanded === i ? 700 : 500 }}
+                sx={{ ...theme.typography[expanded === i ? 'subHeading4' : 'para14'] }}
               >
                 {faq.question}
               </AccordionSummary>
               {faq.answer && (
-                <AccordionDetails sx={{ color: "#ccc", fontSize: "0.9rem" }}>
+                <AccordionDetails sx={{ color: "grey.200", fontSize: "0.9rem" }}>
                   {faq.answer}
                 </AccordionDetails>
               )}
@@ -110,6 +112,7 @@ import {
               variant="contained"
               onClick={() => setShowAll((prev) => !prev)}
               sx={{
+                ...theme.typography.link14,
                 bgcolor: "#fff",
                 color: "#000",
                 borderRadius: "999px",

@@ -27,38 +27,73 @@ const theme = createTheme({
     h1: {
       fontFamily: fontFamilies.heading,
       fontWeight: 700,
-      fontSize: "100px",
-      lineHeight: "69px",
-      letterSpacing: "-5px",
+      fontSize: "6.25rem",
+      lineHeight: "4.5rem",
+      letterSpacing: "-0.3125rem",
       textTransform: "uppercase",
+      "@media (max-width:600px)": {
+        fontSize: "4.25rem",
+        lineHeight: "3.06rem",
+        letterSpacing: "-5%",
+      },
+    },
+    para12: {
+        fontFamily: "'Noto Sans', sans-serif",
+        fontWeight: 400,
+        fontSize: "0.75rem",
+        lineHeight: "1.275rem",
+        letterSpacing: "-0.015rem",
     },
     para14: {
       fontFamily: fontFamilies.para14,
       fontWeight: 400,
-      fontSize: "14px",
-      lineHeight: 1.7,
-      letterSpacing: "-0.02em",
+      fontSize: "0.875rem",
+      lineHeight: "1.5rem",
+      letterSpacing: "-0.02rem",
+    },
+    para16: {
+        fontFamily: "'Noto Sans', sans-serif",
+        fontWeight: 400,
+        fontSize: "1rem",
+        lineHeight: "1.7rem",
+        letterSpacing: "-0.02rem",
     },
     para20: {
-      fontFamily: fontFamilies.para20,
-      fontWeight: 400,
-      fontSize: "20px",
-      lineHeight: "35px",
-    },
+        fontFamily: "'Noto Sans', sans-serif",
+        fontWeight: 400,
+        fontSize: "1.25rem",
+        lineHeight: "2.125rem",
+        letterSpacing: "-0.025rem",
+      },
     captionH1: {
-      fontFamily: "'Alexandria', sans-serif",
-      fontWeight: 300,
-      fontSize: "32px",
-      lineHeight: "48px",
-      letterSpacing: "-0.02em",
+        fontFamily: "'Alexandria', sans-serif",
+        fontWeight: 300,
+        fontSize: "2rem",
+        lineHeight: "3rem",
+        letterSpacing: "-0.04rem"
+    },
+    subHeading1: {
+        fontFamily: "'Alexandria', sans-serif",
+        fontWeight: 700,
+        fontSize: "2rem",
+        lineHeight: "3rem",
+        letterSpacing: "-0.04rem",
     },
     subHeading2: {
-      fontFamily: fontFamilies.subHeading2,
-      fontWeight: 700,
-      fontSize: "24px",
-      lineHeight: "36px",
-      letterSpacing: "-2px",
+        fontFamily: "'Alexandria', sans-serif",
+        fontWeight: 700,
+        fontSize: "1.5rem",
+        lineHeight: "2.25rem",
+        letterSpacing: "-0.03rem",
+        
     },
+    subHeading3: {
+        fontFamily: "'Alexandria', sans-serif",
+        fontWeight: 500,
+        fontSize: "1.25rem",
+        lineHeight: "1.875rem",
+        letterSpacing: "-0.025rem",
+      },
     subHeading4: {
       fontFamily: fontFamilies.subHeading4,
       fontWeight: 500,
@@ -66,7 +101,68 @@ const theme = createTheme({
       lineHeight: "36px",
       letterSpacing: "0%",
     },
+    b1: {
+        fontFamily: "'Alexandria', sans-serif",
+        fontWeight: 500,
+        fontSize: "1rem",
+        lineHeight: "1rem",
+        letterSpacing: "0rem",
+    },
+    link14: {
+        fontFamily: "'Alexandria', sans-serif",
+        fontWeight: 500,
+        fontSize: "0.875rem",
+        lineHeight: "1.3125rem",
+        letterSpacing: "0rem",
+    },
+    extra1: {
+        fontFamily: "'Alexandria', sans-serif",
+        fontWeight: 200,
+        fontSize: "5rem",
+        lineHeight: "1",
+        letterSpacing: "-0.02em"
+    },
+    extra2: {
+        fontFamily: "'Alexandria', sans-serif",
+        fontWeight: 500,
+        fontSize: "2.5rem",
+        lineHeight: "3.75rem",
+        letterSpacing: "-0.02em"
+    }
   },
 });
 
+
+theme.typography.captionH1 = {
+    ...theme.typography.captionH1,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.75rem",
+      lineHeight: "2.275rem",
+      letterSpacing: "-0.035rem",
+    },
+ 
+  };
+theme.typography.subHeading2 = {
+    ...theme.typography.subHeading2,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.25rem",
+      lineHeight: "1.875rem",
+      letterSpacing: "-0.02rem",
+    },
+  };
+  theme.typography.para20 = {
+    ...theme.typography.para20,
+    [theme.breakpoints.down("sm")]: {
+        lineHeight: "1.875rem",
+        letterSpacing: "-0.02rem",
+    }
+  }
+  theme.typography.extra1 = {
+    ...theme.typography.extra1,
+    [theme.breakpoints.down("sm")]: {
+        fontSize: "3rem",
+        lineHeight: "4.5rem",
+        letterSpacing: "-0.02em"
+    }
+  }
 export default theme;

@@ -1,9 +1,18 @@
-import { Box, Typography, Container, Paper, Button, Stack } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Container,
+  Paper,
+  Button,
+  Stack,
+} from "@mui/material";
 import FoxMascot from "../assets/images/foxMascot.png";
 import OrangeLine from "./OrangeLine";
 import ArrowUpRight from "../assets/images/arrow-up-right.svg";
+import { useTheme } from "@mui/material/styles";
 
 const FoxsyTokenSection = () => {
+    const theme = useTheme();
   return (
     <Box sx={{ bgcolor: "#fff", py: 10 }}>
       <Container maxWidth="lg">
@@ -22,17 +31,22 @@ const FoxsyTokenSection = () => {
           <Box sx={{ flex: 1 }}>
             <OrangeLine />
             <Typography
-              variant="h5"
-              fontWeight={700}
-              sx={{ color: "#EA3807", mb: 1 }}
+              variant="subHeading1"
+              sx={{ color: "primary.dark", mb: 1 }}
             >
               $FOXSY Token
             </Typography>
-            <Typography variant="h4" fontWeight={700} sx={{ mb: 2 }}>
+            <Typography
+              variant="captionH1"
+              sx={{ mb: 2, mt: 2, display: "block", maxWidth: "700px" }}
+            >
               $FOXSY is your gateway to exploring and engaging in our
               collaborative ecosystem.
             </Typography>
-            <Typography sx={{ color: "#555", maxWidth: "700px" }}>
+            <Typography
+              sx={{ color: "grey.300", maxWidth: "700px" }}
+              variant="para14"
+            >
               Here’s how $FOXSY enhances your experience.
             </Typography>
 
@@ -73,12 +87,14 @@ const FoxsyTokenSection = () => {
                     borderLeft: (theme) =>
                       `1px solid ${theme.palette.primary.dark}`,
                     mb: 3,
+                    display:"flex",
+                    flexDirection:"column",
                   }}
                 >
-                  <Typography variant="subtitle1" fontWeight={700}>
+                  <Typography variant="subHeading3">
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ mt: 1, color: "#555" }}>
+                  <Typography variant="para14" sx={{ mt: 1, color: "grey.300", }}>
                     {item.desc}
                   </Typography>
                 </Box>
@@ -108,7 +124,7 @@ const FoxsyTokenSection = () => {
             mt: 6,
           }}
         >
-          <Typography variant="h6" sx={{ color: "#EA3807", mb: 4 }}>
+          <Typography variant="captionH1" sx={{ color: "primary.main", mb: 4 }}>
             How to get $FOXSY?
           </Typography>
 
@@ -147,16 +163,17 @@ const FoxsyTokenSection = () => {
                 sx={{
                   color: "#ccc",
                   p: 2,
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
                 <Typography
-                  variant="subtitle1"
-                  fontWeight={600}
+                  variant="subHeading3"
                   sx={{ color: "#fff" }}
                 >
                   {item.title}
                 </Typography>
-                <Typography variant="body2" sx={{ mt: 1 }}>
+                <Typography variant="para14" sx={{ mt: 1,color:"grey.200" }}>
                   {item.desc}
                 </Typography>
               </Box>
@@ -173,31 +190,36 @@ const FoxsyTokenSection = () => {
             }}
           >
             <Box>
-              <Typography variant="body2" sx={{ color: "#ccc" }}>
+              <Typography variant="para14" sx={{ color: "#fff" }}>
                 Current price
               </Typography>
               <Stack direction="row" gap={1} alignItems="center">
-              <Typography
-                variant="h5"
-                sx={{ color: "secondary.main", fontWeight: 700 }}
-              >
-                $0.03187
-              </Typography>
-              <Stack direction="row" gap={1} alignItems="center">
-              <Typography variant="caption" sx={{ color: "white" }}>
-              <img src={ArrowUpRight} alt="Token Price Change" />
-                 11.07% (1d)
-              </Typography>
-              </Stack>
+                <Typography
+                  variant="extra2"
+                  sx={{ color: "secondary.main"}}
+                >
+                  $0.03187
+                </Typography>
+                <Stack direction="row" gap={1} alignItems="center">
+                  <Typography variant="para14" sx={{ color: "white" }}>
+                    <img src={ArrowUpRight} alt="Token Price Change" />
+                    11.07% (1d)
+                  </Typography>
+                </Stack>
               </Stack>
             </Box>
             <Button
               variant="contained"
               sx={{
+                ...theme.typography.b1,
                 bgcolor: "#EA3807",
-                color: "#fff",
                 textTransform: "none",
+                borderRadius: "999px",
                 alignSelf: "center",
+                px: 4,
+                  py: 1.5,
+                  "&:hover": { bgcolor: "#d23100" },
+                  mt: { xs: 3, md: 0 }
               }}
             >
               Get $FOXSY

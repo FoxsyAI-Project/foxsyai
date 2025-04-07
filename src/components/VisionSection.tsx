@@ -37,6 +37,7 @@ const VisionSection = () => {
                     height: 8,
                     bgcolor: "#EA3807",
                     borderRadius: "1px",
+                    alignSelf: "flex-start",
                   }}
                 />
                 <Typography variant="subHeading2" fontWeight="bold">
@@ -50,29 +51,29 @@ const VisionSection = () => {
                   pl: 2,
                 }}
               >
-                <Typography variant="para20" sx={{ mb: 1 }}>
+                <Typography variant="para20" sx={{ mb: 1, color: "grey.300" }}>
                   {item.text}
                 </Typography>
                 
-                <Typography variant="para14" sx={{ mb: 1 }}>
+                <Typography variant="para14" sx={{ mb: 1, color: "grey.300" }}>
                   {item.text1}
                 </Typography>
 
                 {item.title === "Principles" && (
                   <>
-                    <Typography variant="para14">
+                    <Typography variant="para14" sx={{ color: "grey.300" }}>
                       <strong>Build</strong> connection and collaboration.
                     </Typography>
-                    <Typography variant="para14">
+                    <Typography variant="para14" sx={{ color: "grey.300" }}>
                       <strong>Encourage</strong> innovation and creativity.
                     </Typography>
-                    <Typography variant="para14">
+                    <Typography variant="para14" sx={{ color: "grey.300" }}>
                       <strong>Cultivate</strong> transparency and trust.
                     </Typography>
-                    <Typography variant="para14">
+                    <Typography variant="para14" sx={{ color: "grey.300" }}>
                       <strong>Prioritize</strong> safety and ethics.
                     </Typography>
-                    <Typography variant="para14">
+                    <Typography variant="para14" sx={{ color: "grey.300" }}>
                       <strong>Promote</strong> freedom worldwide.
                     </Typography>
                   </>

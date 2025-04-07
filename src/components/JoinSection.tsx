@@ -32,17 +32,20 @@ import {
           >
             {/* Text Section */}
             <Box sx={{ flex: 1 }}>
-              <Typography variant="h4" fontWeight={500} sx={{ color: "#555" }}>
+              <Typography variant="captionH1" color="grey.300">
                 Join Foxsy AI
               </Typography>
-              <Typography variant="h6" fontWeight={600} sx={{ mt: 1, color: "#444" }}>
+              <br/>
+              <Typography variant="subHeading3" sx={{ mt: 1, color: "grey.300" }}>
                 to shape the future of robotics and transform society through technology!
               </Typography>
-              <Typography variant="body1" sx={{ mt: 2, color: "#666", maxWidth: 600 }}>
+              <br/>
+              <Typography variant="para14" sx={{ mt: 2, color: "grey.300", maxWidth: 600 }}>
                 If you share our vision, if you believe amazing technologies should be created for
                 the purpose of enriching lives, if you are interested in robotics, AI or blockchain
                 - JOIN US! We would love to have you along on our journey.
               </Typography>
+              <br/>
   
               <Stack direction="row" spacing={2} sx={{ mt: 4 }}>
                 <IconButton component="a" href="https://t.me/foxsyai" target="_blank">
@@ -66,6 +69,7 @@ import {
                 variant="contained"
                 size="large"
                 sx={{
+                  ...theme.typography.b1,
                   bgcolor: "#d2461e",
                   px: 4,
                   py: 1.5,

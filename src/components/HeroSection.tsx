@@ -1,11 +1,17 @@
-import { Box, Typography, Button, Stack, Container } from "@mui/material";
-import heroImage from "../assets/images/hero-image.png";
+import { Box, Typography, Button, Stack, Container, useMediaQuery } from "@mui/material";
+import heroImageDesktop from "../assets/images/hero-image.png";
+import heroImageMobile from "../assets/images/hero-image-mobile.jpg";
 import instagramIcon from "../assets/images/instagram.svg";
 import twitterIcon from "../assets/images/x.svg";
 import tiktokIcon from "../assets/images/tiktok.svg";
 import telegramIcon from "../assets/images/telegram.svg";
+import { useTheme } from "@mui/material/styles";
 
 const HeroSection = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const backgroundImage = isMobile ? heroImageMobile : heroImageDesktop;
+
   return (
     <Box
       sx={{
@@ -16,6 +22,7 @@ const HeroSection = () => {
         bgcolor: "#000",
       }}
     >
+      
       <Box
         sx={{
           position: "relative",
@@ -23,7 +30,7 @@ const HeroSection = () => {
           maxWidth: "1200px",
           borderRadius: "40px",
           overflow: "hidden",
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           minHeight: { xs: "auto", md: "600px" },
@@ -31,30 +38,26 @@ const HeroSection = () => {
         }}
       >
         <Container sx={{ zIndex: 2, position: "relative", py: 6 }}>
-          <Box sx={{ maxWidth: 600, paddingLeft:"10%" }}>
+          <Box sx={{ maxWidth: 600, paddingLeft: "10%" }}>
             <Typography
               variant="h1"
               sx={{
-                fontSize: { xs: "40px", md: "72px" },
-                fontWeight: 700,
-                lineHeight: 1,
                 color: "#fff",
               }}
             >
               OUT <br />
               FOXING <br />
-              THE FUTURE
+              THE <br />
+              FUTURE
             </Typography>
 
-            <Typography variant="body1" sx={{ mt: 3, color: "#ccc" }}>
+            <Typography variant="para14" sx={{ mt: 3, color: "#ccc" }}>
               Pioneering innovation in <br />
               <Typography
                 component="span"
-                variant="h6"
+                variant="captionH1"
                 sx={{
                   display: "inline",
-                  fontWeight: 400,
-                  fontSize: "28px",
                   color: "#fff",
                 }}
               >
@@ -62,44 +65,55 @@ const HeroSection = () => {
               </Typography>
             </Typography>
 
-            {/* CTA */}
-            <Stack direction="row" spacing={2} sx={{ mt: 4 }}>
+            {/* CTA and Social Icons aligned left and right */}
+            <Box
+              sx={{
+                mt: 5,
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                flexWrap: "wrap", // for responsiveness
+                pr: "10%", // to match left padding visually
+              }}
+            >
+              {/* Social Icons - Left */}
+              <Stack direction="row" spacing={2}>
+                {[telegramIcon, tiktokIcon, instagramIcon, twitterIcon].map(
+                  (icon, idx) => (
+                    <img
+                      key={idx}
+                      src={icon}
+                      alt="social-icon"
+                      style={{
+                        width: 28,
+                        height: 28,
+                        filter: "invert(1)",
+                        cursor: "pointer",
+                      }}
+                    />
+                  )
+                )}
+              </Stack>
+
+              {/* CTA Button - Right */}
+              
               <Button
                 variant="contained"
                 sx={{
+                  ...theme.typography.b1,
                   bgcolor: "#EA3807",
                   color: "#fff",
                   borderRadius: "999px",
                   textTransform: "none",
                   px: 4,
                   py: 1.5,
-                  fontSize: "16px",
-                  fontWeight: 600,
                   "&:hover": { bgcolor: "#d23100" },
+                  mt: { xs: 3, md: 0 }, // stack on small screens
                 }}
               >
                 Get $FOXSY
               </Button>
-            </Stack>
-
-            {/* Social Icons */}
-            <Stack direction="row" spacing={2} sx={{ mt: 5 }}>
-              {[telegramIcon, tiktokIcon, instagramIcon, twitterIcon].map(
-                (icon, idx) => (
-                  <img
-                    key={idx}
-                    src={icon}
-                    alt="social-icon"
-                    style={{
-                      width: 28,
-                      height: 28,
-                      filter: "invert(1)",
-                      cursor: "pointer",
-                    }}
-                  />
-                )
-              )}
-            </Stack>
+            </Box>
           </Box>
         </Container>
       </Box>

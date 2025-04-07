@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Paper, Button } from "@mui/material";
+import { Box, Container, Typography, Paper, Button, useMediaQuery } from "@mui/material";
 import Masonry from "@mui/lab/Masonry";
 import RobotLifecycle from "../assets/images/robot-lifecycle.png";
 import foxKeeper from "../assets/images/foxKeeper.jpg";
@@ -10,6 +10,8 @@ import foxMini from "../assets/images/foxMini.jpg";
 import foxSquad from "../assets/images/foxSquad.jpg";
 import foxDroid from "../assets/images/foxDroid.png";
 import OrangeLine from "./OrangeLine";
+import { useTheme } from "@mui/material/styles";
+import Slider from "react-slick";
 
 const products = [
   {
@@ -34,6 +36,11 @@ const products = [
     image: foxStore,
   },
   {
+    title: "FoxDroid",
+    desc: "A competitive platform featuring humanoid robots in structured tournaments, demonstrating advanced mobility, strategy, and decision-making capabilities.",
+    image: foxDroid,
+  },
+  {
     title: "FoxTalk",
     desc: "An AI-powered robot for engaging, human-like communication across applications such as customer service, education, and entertainment.",
     image: foxTalk,
@@ -48,26 +55,33 @@ const products = [
     desc: "Multi-agent robotic systems designed in coordination for advanced mobility, strategy, and autonomous teamwork.",
     image: foxSquad,
   },
-  {
-    title: "FoxDroid",
-    desc: "A competitive platform featuring humanoid robots in structured tournaments, demonstrating advanced mobility, strategy, and decision-making capabilities.",
-    image: foxDroid,
-  },
+ 
 ];
 
 const ProductsSection = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+const slickSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+};
   return (
     <Box sx={{ bgcolor: "#1a1a1a", py: 8, color: "#fff" }}>
       <Container>
         {/* Section Header */}
         <Box sx={{ mb: 4 }}>
         <OrangeLine />
-          <Typography variant="h5" fontWeight={700}>
+          <Typography variant="subHeading1">
             Products
           </Typography>
           <Typography
-            variant="body1"
-            sx={{ mt: 2, color: "#ccc", maxWidth: "800px" }}
+            variant="para20"
+            sx={{ mt: 2, display: "block", color: "grey.200", maxWidth: "100%" }}
           >
             Our existing and upcoming products cover the whole spectrum of AI in
             robotics, from games and complex simulators and digital
@@ -82,56 +96,128 @@ const ProductsSection = () => {
             sx={{ width: "100%", borderRadius: 2 }}
           />
         </Box>
-
-        {/* Masonry Grid */}
-        <Masonry columns={{ xs: 1, sm: 2, md: 4 }} spacing={3}>
-          {products.map((product, index) => (
-            <Paper
-              key={index}
-              elevation={3}
-              sx={{
-                borderRadius: 3,
-                overflow: "hidden",
-                bgcolor: "#fff",
-                color: "#000",
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-                gap: 1,
-              }}
-            >
-              {product.image && (
-                <Box
-                  component="img"
-                  src={product.image}
-                  alt={product.title}
-                  sx={{ width: "100%", borderRadius: 2 }}
-                />
-              )}
-
-              <Typography variant="subtitle1" fontWeight={600}>
+ {/* Mobile: Slider */}
+ {isMobile ? (
+  <Box>
+    <Slider {...slickSettings}>
+      {products.map((product, index) => (
+        <Box key={index} sx={{ px: 2 }}>
+          <Paper
+            elevation={3}
+            sx={{
+              borderRadius: 2,
+              overflow: "hidden",
+              bgcolor: "#fff",
+              color: "#000",
+            }}
+          >
+            {/* Image */}
+            {product.image && (
+              <Box
+                component="img"
+                src={product.image}
+                alt={product.title}
+                sx={{
+                  width: "100%",
+                  height: 160,
+                  objectFit: "cover",
+                }}
+              />
+            )}
+            {/* Content */}
+            <Box sx={{ p: 3 }} display="flex" flexDirection="column" gap={1}>
+              <Typography variant="subHeading3" sx={{ color: "primary.dark" }}>
                 {product.title}
               </Typography>
-              <Typography variant="body2">{product.desc}</Typography>
-
+              <Typography variant="para12" sx={{ color: "grey.300" }}>
+                {product.desc}
+              </Typography>
               {product.cta && (
                 <Button
                   variant="contained"
                   size="small"
                   sx={{
-                    alignSelf: "flex-end",
-                    mt: 1,
+                    mt: 2,
+                    ...theme.typography.link14,
                     borderRadius: "999px",
                     textTransform: "none",
-                    bgcolor: "primary.main",
+                    color: "white",
+                    bgcolor: "primary.dark",
                   }}
                 >
                   {product.cta}
                 </Button>
               )}
-            </Paper>
-          ))}
-        </Masonry>
+            </Box>
+          </Paper>
+        </Box>
+      ))}
+    </Slider>
+  </Box>
+) : (
+  <Masonry columns={{ xs: 1, sm: 2, md: 4 }} spacing={3}>
+    {products.map((product, index) => (
+      <Paper
+        key={index}
+        elevation={3}
+        sx={{
+          borderTopLeftRadius: 0,
+          borderTopRightRadius: 12,
+          borderBottomRightRadius: 12,
+          borderBottomLeftRadius: 12,
+          overflow: "hidden",
+          bgcolor: "#fff",
+          color: "#000",
+          display: "flex",
+          flexDirection: "column",
+          gap: 1,
+        }}
+      >
+        {/* Image */}
+        {product.image && (
+          <Box
+            component="img"
+            src={product.image}
+            alt={product.title}
+            sx={{
+              width: "100%",
+              borderTopRightRadius: 12,
+              borderBottomRightRadius: 0,
+              borderBottomLeftRadius: 0,
+              borderTopLeftRadius: 0,
+            }}
+          />
+        )}
+        {/* Content */}
+        <Box sx={{ p: 4, display: "flex", flexDirection: "column", gap: 1 }}>
+          <Typography variant="subHeading3" sx={{ color: "primary.dark" }}>
+            {product.title}
+          </Typography>
+          <Typography variant="para12" sx={{ color: "grey.300" }}>
+            {product.desc}
+          </Typography>
+          {product.cta && (
+            <Button
+              variant="contained"
+              size="small"
+              sx={{
+                alignSelf: "flex-end",
+                ...theme.typography.link14,
+                mt: 1,
+                borderRadius: "999px",
+                textTransform: "none",
+                color: "white",
+                bgcolor: "primary.dark",
+              }}
+            >
+              {product.cta}
+            </Button>
+          )}
+        </Box>
+      </Paper>
+    ))}
+  </Masonry>
+)}
       </Container>
     </Box>
   );

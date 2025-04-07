@@ -27,7 +27,7 @@ const OpportunitiesSection = () => {
         {/* Section Header */}
         <Box sx={{ mb: 4 }}>
          <OrangeLine />
-          <Typography variant="h5" fontWeight={700}>
+          <Typography variant="subHeading1">
             Opportunities for Partners & Collaborators
           </Typography>
         </Box>
@@ -50,12 +50,14 @@ const OpportunitiesSection = () => {
               sx={{
                 borderLeft: "2px solid #555",
                 pl: 2,
+                display:"flex",
+                flexDirection:"column",
               }}
             >
-              <Typography variant="subtitle1" fontWeight={600}>
+              <Typography variant="subHeading3" fontWeight={600}>
                 {item.title}
               </Typography>
-              <Typography variant="body2" sx={{ mt: 1, color: "#ccc" }}>
+              <Typography variant="para14" sx={{ mt: 1, color: "grey.200" }}>
                 {item.desc}
               </Typography>
             </Box>
