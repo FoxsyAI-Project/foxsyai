@@ -10,6 +10,7 @@ import roboCup from "../assets/images/roboCup.png";
 import OrangeLine from "./OrangeLine";
 import flashImage from "../assets/images/flash.svg";
 import { useTheme } from "@mui/material/styles";
+import arrowRight from "../assets/images/arrow-right.svg";
 
 const TARGET_DATE = new Date("2025-07-15T00:00:00");
 
@@ -42,17 +43,16 @@ const RoboCupSection = () => {
       <Container maxWidth="lg" sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, alignItems: "center", gap: 4 }}>
         
         {/* Text Section */}
-        <Box sx={{ flex: 1 }}>
+        <Box sx={{ flex: 1, flexDirection: "column" }}>
           <OrangeLine />
-          <Typography variant="subHeading1" sx={{ color: "primary.dark"}}>
+          <Typography variant="subHeading1" sx={{ color: "primary.dark", mb: 4}}>
             RoboCup
           </Typography>
-          <br />
-          <Typography variant="captionH1" color="primary.dark" sx={{ mt: 1 }}>
+          <Typography variant="captionH1" color="primary.dark" sx={{ mb: 4 }}>
             A team of fully autonomous humanoid robot soccer players
           </Typography>
 
-          <Typography variant="subHeading3" sx={{ display: "flex", alignItems: "center", color: "primary.dark" }}>
+          <Typography variant="subHeading3" sx={{ display: "flex", alignItems: "center", color: "primary.dark", mb: 4 }}>
             <img
               src={flashImage}
               alt="RoboCup official goal"
@@ -61,7 +61,7 @@ const RoboCupSection = () => {
             RoboCup official goal
           </Typography>
 
-          <Typography sx={{ mt: 1, color:"grey.300" }} variant="para16">
+          <Typography sx={{  color:"grey.300" }} variant="para16">
             “By the middle of the 21st century, a team of fully autonomous humanoid robot soccer players shall win a soccer game, complying with the official rules of FIFA, against the winner of the most recent World Cup.”
           </Typography>
 
@@ -69,7 +69,7 @@ const RoboCupSection = () => {
             RoboCup aims for autonomous robots to defeat World Cup champions by 2050. Foxsy AI team members have excelled in RoboCup, winning multiple top positions in over 22 years of participation.<Typography component="span" variant="para16" sx={{ color: 'primary.main' }}> Foxsy AI is using blockchain technologies to engage a broad audience.</Typography> Their massive creative input will accelerate progress towards RoboCup’s goals.
           </Typography>
           <br />
-          <Typography sx={{ mt: 2, color:"grey.300" }} variant="para16">
+          <Typography sx={{ mt: 4, color:"grey.300" }} variant="para16">
             From July 15th to 21st, 2025, Brazil will host RoboCup 2025 in Salvador, Bahia.
           </Typography>
         </Box>
@@ -86,8 +86,8 @@ const RoboCupSection = () => {
         <Paper
           elevation={3}
           sx={{
-            px: 4,
-            py: 3,
+            px: 7,
+            py: 4,
             borderRadius: 2,
             display: "flex",
             justifyContent: "space-between",
@@ -96,15 +96,13 @@ const RoboCupSection = () => {
             gap: 2,
           }}
         >
-          <Box>
-            <Typography variant="para20" color="primary.dark">
+          <Box display="flex" flexDirection="column" >
+            <Typography variant="para20" color="primary.dark" sx={{ mb: 4 }}>
               Kick starts
             </Typography>
-            <br />
-            <Typography variant="extra1" sx={{ color:"secondary.main" }}>
+            <Typography variant="extra1" sx={{ color:"secondary.main", mb: 4 }}>
               {`${timeLeft.days}:${String(timeLeft.hours).padStart(2, "0")}:${String(timeLeft.minutes).padStart(2, "0")}:${String(timeLeft.seconds).padStart(2, "0")}`}
             </Typography>
-            <br />
             <Typography variant="para14" color="grey.300">
               We are excited to welcome you and share this incredible experience together. See you there!
             </Typography>
@@ -122,10 +120,10 @@ const RoboCupSection = () => {
                   py: 1.5,
                   "&:hover": { bgcolor: "#d23100" },
                   alignSelf: "flex-end",
-                  mt: { xs: 3, md: 0 }, // stack on small screens
+                  mt: { xs: 3, md: 0 },
                 }}
               >
-            More →
+            More <img src={arrowRight} alt="Arrow Right" />
           </Button>
         </Paper>
       </Container>

@@ -73,6 +73,7 @@ const RoadmapSection = () => {
               <Typography
                 variant="captionH1"
                 color="primary.main"
+                sx={{mb:2}}
               >
                 {item.quarter}
               </Typography>

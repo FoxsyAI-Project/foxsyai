@@ -24,9 +24,9 @@ import {
       dots: false,
       infinite: true,
       speed: 400,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
-      arrows: false,
+      arrows: true,
       responsive: [
         {
           breakpoint: 1200,
@@ -58,8 +58,10 @@ import {
                     display: "flex",
                     flexDirection: "column",
                     borderRadius: 3,
+                    width:"90%",
                     overflow: "hidden",
                     backgroundColor: "#444",
+                    cursor: "grab",
                   }}
                 >
                   <CardMedia

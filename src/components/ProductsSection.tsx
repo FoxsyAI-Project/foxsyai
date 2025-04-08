@@ -41,11 +41,6 @@ const products = [
     image: foxDroid,
   },
   {
-    title: "FoxTalk",
-    desc: "An AI-powered robot for engaging, human-like communication across applications such as customer service, education, and entertainment.",
-    image: foxTalk,
-  },
-  {
     title: "FoxMini",
     desc: "Compact autonomous robots specialized for precise, collaborative tasks in industrial, educational, or home environments.",
     image: foxMini,
@@ -55,12 +50,18 @@ const products = [
     desc: "Multi-agent robotic systems designed in coordination for advanced mobility, strategy, and autonomous teamwork.",
     image: foxSquad,
   },
+  {
+    title: "FoxTalk",
+    desc: "An AI-powered robot for engaging, human-like communication across applications such as customer service, education, and entertainment.",
+    image: foxTalk,
+  },
  
 ];
 
 const ProductsSection = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  
 
 const slickSettings = {
   dots: true,
@@ -81,7 +82,7 @@ const slickSettings = {
           </Typography>
           <Typography
             variant="para20"
-            sx={{ mt: 2, display: "block", color: "grey.200", maxWidth: "100%" }}
+            sx={{ mt: 4, mb: 6, display: "block", color: "grey.200", maxWidth: "100%" }}
           >
             Our existing and upcoming products cover the whole spectrum of AI in
             robotics, from games and complex simulators and digital
@@ -93,7 +94,7 @@ const slickSettings = {
             component="img"
             src={RobotLifecycle}
             alt="Robot lifecycle"
-            sx={{ width: "100%", borderRadius: 2 }}
+            sx={{ width: "100%", borderRadius: 2, mb:4 }}
           />
         </Box>
  {/* Mobile: Slider */}
@@ -107,6 +108,7 @@ const slickSettings = {
             sx={{
               borderRadius: 2,
               overflow: "hidden",
+              cursor: "grab",
               bgcolor: "#fff",
               color: "#000",
             }}
@@ -156,7 +158,47 @@ const slickSettings = {
   </Box>
 ) : (
   <Masonry columns={{ xs: 1, sm: 2, md: 4 }} spacing={3}>
-    {products.map((product, index) => (
+  {products.map((product, index) => {
+    const image = (
+      <Box
+        component="img"
+        src={product.image}
+        alt={product.title}
+        sx={{
+          width: "100%",
+        }}
+      />
+    );
+
+    const content = (
+      <Box sx={{ p: 4, display: "flex", flexDirection: "column", gap: 1 }}>
+        <Typography variant="subHeading3" sx={{ color: "primary.dark" }}>
+          {product.title}
+        </Typography>
+        <Typography variant="para12" sx={{ color: "grey.300" }}>
+          {product.desc}
+        </Typography>
+        {product.cta && (
+          <Button
+            variant="contained"
+            size="small"
+            sx={{
+              alignSelf: "flex-end",
+              ...theme.typography.link14,
+              mt: 1,
+              borderRadius: "999px",
+              textTransform: "none",
+              color: "white",
+              bgcolor: "primary.dark",
+            }}
+          >
+            {product.cta}
+          </Button>
+        )}
+      </Box>
+    );
+
+    return (
       <Paper
         key={index}
         elevation={3}
@@ -173,50 +215,22 @@ const slickSettings = {
           gap: 1,
         }}
       >
-        {/* Image */}
-        {product.image && (
-          <Box
-            component="img"
-            src={product.image}
-            alt={product.title}
-            sx={{
-              width: "100%",
-              borderTopRightRadius: 12,
-              borderBottomRightRadius: 0,
-              borderBottomLeftRadius: 0,
-              borderTopLeftRadius: 0,
-            }}
-          />
-        )}
-        {/* Content */}
-        <Box sx={{ p: 4, display: "flex", flexDirection: "column", gap: 1 }}>
-          <Typography variant="subHeading3" sx={{ color: "primary.dark" }}>
-            {product.title}
-          </Typography>
-          <Typography variant="para12" sx={{ color: "grey.300" }}>
-            {product.desc}
-          </Typography>
-          {product.cta && (
-            <Button
-              variant="contained"
-              size="small"
-              sx={{
-                alignSelf: "flex-end",
-                ...theme.typography.link14,
-                mt: 1,
-                borderRadius: "999px",
-                textTransform: "none",
-                color: "white",
-                bgcolor: "primary.dark",
-              }}
-            >
-              {product.cta}
-            </Button>
-          )}
-        </Box>
+       {[0, 2, 6, 7].includes(index) ? (
+  <>
+    {image}
+    {content}
+  </>
+) : (
+  <>
+    {content}
+    {image}
+  </>
+)}
       </Paper>
-    ))}
-  </Masonry>
+    );
+  })}
+</Masonry>
+
 )}
       </Container>
     </Box>

@@ -11,6 +11,7 @@ import {
   import RemoveIcon from "@mui/icons-material/Remove";
   import { useState } from "react";
   import { useTheme } from "@mui/material/styles";
+import OrangeLine from "./OrangeLine";
   
   const allFaqs = [
     {
@@ -60,26 +61,27 @@ import {
     const visibleFaqs = showAll ? allFaqs : allFaqs.slice(0, 5);
   
     return (
-      <Box sx={{ bgcolor: "#1A1A1A", color: "#fff", py: 8 }}>
+      <Box sx={{ bgcolor: "grey.500", color: "#fff", py: 8 }}>
         <Container>
           {/* Header */}
           <Box sx={{ mb: 4 }}>
-            <Box sx={{ width: 40, height: 4, bgcolor: "#EA3807", mb: 2 }} />
+          <OrangeLine />
             <Typography variant="subHeading1">
               Everything you need to know
             </Typography>
           </Box>
   
           {/* Accordions */}
+          
           {visibleFaqs.map((faq, i) => (
             <Accordion
               key={i}
               expanded={expanded === i}
               onChange={handleChange(i)}
               sx={{
-                bgcolor: expanded === i ? "#000" : "#222",
+                bgcolor: expanded === i ? "#000" : "#2b2a2a",
                 color: "#fff",
-                mb: 1,
+                mb: 2,
                 borderRadius: "8px",
                 px: 1,
               }}
@@ -94,7 +96,9 @@ import {
                 }
                 aria-controls={`panel${i}-content`}
                 id={`panel${i}-header`}
-                sx={{ ...theme.typography[expanded === i ? 'subHeading4' : 'para14'] }}
+                sx={{  flexDirection: "row-reverse", ...theme.typography[expanded === i ? 'subHeading4' : 'para14'] , "& .MuiAccordionSummary-expandIconWrapper": {
+                  mr: 2, // spacing between icon and text
+                },}}
               >
                 {faq.question}
               </AccordionSummary>

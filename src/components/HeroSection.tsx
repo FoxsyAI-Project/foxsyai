@@ -17,9 +17,10 @@ const HeroSection = () => {
       sx={{
         display: "flex",
         justifyContent: "center",
-        py: { xs: 6, md: 10 },
-        px: 2,
-        bgcolor: "#000",
+        py: { xs: 6, md: 5 },
+        px: 0,
+        background: "linear-gradient(to bottom, #000000 0%, #232121 100%)",
+        width: "100%",
       }}
     >
       
@@ -27,9 +28,9 @@ const HeroSection = () => {
         sx={{
           position: "relative",
           width: "100%",
-          maxWidth: "1200px",
+          maxWidth: { xs: "100vw", md: "1200px" },
+          height: "100%",
           borderRadius: "40px",
-          overflow: "hidden",
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -37,7 +38,7 @@ const HeroSection = () => {
           boxShadow: "0 20px 80px rgba(0,0,0,0.5)",
         }}
       >
-        <Container sx={{ zIndex: 2, position: "relative", py: 6 }}>
+        <Container disableGutters sx={{  position: "relative", py: 6 }} >
           <Box sx={{ maxWidth: 600, paddingLeft: "10%" }}>
             <Typography
               variant="h1"

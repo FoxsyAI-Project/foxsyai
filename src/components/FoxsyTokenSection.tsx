@@ -28,17 +28,17 @@ const FoxsyTokenSection = () => {
           }}
         >
           {/* Text Side */}
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ flex: 1, flexDirection: "column" }}>
             <OrangeLine />
             <Typography
               variant="subHeading1"
-              sx={{ color: "primary.dark", mb: 1 }}
+              sx={{ color: "primary.dark"}}
             >
               $FOXSY Token
             </Typography>
             <Typography
               variant="captionH1"
-              sx={{ mb: 2, mt: 2, display: "block", maxWidth: "700px" }}
+              sx={{ mb: 4, mt: 4, display: "block", maxWidth: "700px" }}
             >
               $FOXSY is your gateway to exploring and engaging in our
               collaborative ecosystem.
@@ -94,7 +94,7 @@ const FoxsyTokenSection = () => {
                   <Typography variant="subHeading3">
                     {item.title}
                   </Typography>
-                  <Typography variant="para14" sx={{ mt: 1, color: "grey.300", }}>
+                  <Typography variant="para14" sx={{ mt: 2, color: "grey.300", }}>
                     {item.desc}
                   </Typography>
                 </Box>
@@ -117,17 +117,16 @@ const FoxsyTokenSection = () => {
         <Paper
           elevation={3}
           sx={{
-            bgcolor: "#1a1a1a",
             color: "#fff",
             borderRadius: 3,
-            p: 4,
+           
             mt: 6,
           }}
         >
-          <Typography variant="captionH1" sx={{ color: "primary.main", mb: 4 }}>
+        <Box sx={{ bgcolor: "grey.500", width: "100%",p:5, boxSizing:"border-box",borderRadius: 3,borderBottomLeftRadius:0,borderBottomRightRadius:0 }}>
+          <Typography variant="captionH1" sx={{ color: "primary.main"}}>
             How to get $FOXSY?
           </Typography>
-
           <Box
             sx={{
               display: "grid",
@@ -135,9 +134,10 @@ const FoxsyTokenSection = () => {
                 xs: "1fr",
                 sm: "1fr 1fr",
                 md: "1fr 1fr 1fr 1fr",
+                
               },
               gap: 3,
-              mb: 4,
+              mt: 4
             }}
           >
             {[
@@ -180,6 +180,8 @@ const FoxsyTokenSection = () => {
             ))}
           </Box>
 
+          </Box>
+
           {/* Token Price + Button */}
           <Box
             sx={{
@@ -187,13 +189,19 @@ const FoxsyTokenSection = () => {
               justifyContent: "space-between",
               flexWrap: "wrap",
               gap: 2,
+              bgcolor: "black",
+              p:2,
+              px: 5,
+              borderRadius: 3,
+              borderTopLeftRadius:0,
+              borderTopRightRadius:0,
             }}
           >
             <Box>
               <Typography variant="para14" sx={{ color: "#fff" }}>
                 Current price
               </Typography>
-              <Stack direction="row" gap={1} alignItems="center">
+              <Stack direction="row" gap={1} alignItems="center" >
                 <Typography
                   variant="extra2"
                   sx={{ color: "secondary.main"}}
@@ -201,7 +209,7 @@ const FoxsyTokenSection = () => {
                   $0.03187
                 </Typography>
                 <Stack direction="row" gap={1} alignItems="center">
-                  <Typography variant="para14" sx={{ color: "white" }}>
+                  <Typography variant="para14" sx={{ color: "white" }} display="flex">
                     <img src={ArrowUpRight} alt="Token Price Change" />
                     11.07% (1d)
                   </Typography>
