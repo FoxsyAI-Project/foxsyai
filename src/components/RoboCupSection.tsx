@@ -43,7 +43,7 @@ const RoboCupSection = () => {
       <Container maxWidth="lg" sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, alignItems: "center", gap: 4 }}>
         
         {/* Text Section */}
-        <Box sx={{ flex: 1, flexDirection: "column" }}>
+        <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
           <OrangeLine />
           <Typography variant="subHeading1" sx={{ color: "primary.dark", mb: 4}}>
             RoboCup
@@ -68,7 +68,6 @@ const RoboCupSection = () => {
           <Typography sx={{ mt: 2,color:"grey.300" }} variant="para16">
             RoboCup aims for autonomous robots to defeat World Cup champions by 2050. Foxsy AI team members have excelled in RoboCup, winning multiple top positions in over 22 years of participation.<Typography component="span" variant="para16" sx={{ color: 'primary.main' }}> Foxsy AI is using blockchain technologies to engage a broad audience.</Typography> Their massive creative input will accelerate progress towards RoboCup’s goals.
           </Typography>
-          <br />
           <Typography sx={{ mt: 4, color:"grey.300" }} variant="para16">
             From July 15th to 21st, 2025, Brazil will host RoboCup 2025 in Salvador, Bahia.
           </Typography>
