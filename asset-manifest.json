@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/foxsyai/static/css/main.7d74cae8.css",
-    "main.js": "/foxsyai/static/js/main.45c6ee9a.js",
+    "main.css": "/foxsyai/static/css/main.3c9f0060.css",
+    "main.js": "/foxsyai/static/js/main.9284e83b.js",
     "static/media/hero-image.png": "/foxsyai/static/media/hero-image.d6b12c192b9b60e65856.png",
     "static/media/hero-image-mobile.jpg": "/foxsyai/static/media/hero-image-mobile.4f1e17bb16bc6291eefc.jpg",
     "static/media/foxMascot.png": "/foxsyai/static/media/foxMascot.ad94e02e843ae2070b25.png",
@@ -105,11 +105,12 @@
     "static/media/x.svg": "/foxsyai/static/media/x.443e2d7393224e1bfdc28b55d49e909c.svg",
     "static/media/flash.svg": "/foxsyai/static/media/flash.acd097dd30c498a818c1ea2636d0623f.svg",
     "static/media/arrow-up-right.svg": "/foxsyai/static/media/arrow-up-right.27346c302e61ff1a262b0a6cdf598c2c.svg",
-    "main.7d74cae8.css.map": "/foxsyai/static/css/main.7d74cae8.css.map",
-    "main.45c6ee9a.js.map": "/foxsyai/static/js/main.45c6ee9a.js.map"
+    "static/media/arrow-right.svg": "/foxsyai/static/media/arrow-right.66b22f17abea2ce70d73bb4151fe3b63.svg",
+    "main.3c9f0060.css.map": "/foxsyai/static/css/main.3c9f0060.css.map",
+    "main.9284e83b.js.map": "/foxsyai/static/js/main.9284e83b.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d74cae8.css",
-    "static/js/main.45c6ee9a.js"
+    "static/css/main.3c9f0060.css",
+    "static/js/main.9284e83b.js"
   ]
 }
