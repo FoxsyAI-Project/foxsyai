@@ -37,7 +37,7 @@ import {
       speed: 400,
       slidesToShow: 3,
       slidesToScroll: 1,
-      arrows: false,
+      arrows: true,
       responsive: [
         { breakpoint: 960, settings: { slidesToShow: 2 } },
         { breakpoint: 600, settings: { slidesToShow: 1 } },
@@ -60,9 +60,11 @@ import {
                 <Box
                   sx={{
                     position: "relative",
+                    cursor: "grab",
                     borderRadius: 2,
                     overflow: "hidden",
                     height: 280,
+                    width: "90%",
                     backgroundColor: "#000",
                   }}
                 >
@@ -75,6 +77,7 @@ import {
                       height: "100%",
                       objectFit: "cover",
                       display: "block",
+                      opacity:0.7
                     }}
                   />
                   <IconButton

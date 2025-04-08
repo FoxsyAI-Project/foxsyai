@@ -22,7 +22,7 @@ const OpportunitiesSection = () => {
   ];
 
   return (
-    <Box sx={{ bgcolor: "#121212", color: "#fff", py: 8 }}>
+    <Box sx={{ bgcolor: "#121212", color: "#fff", py: 10 }}>
       <Container>
         {/* Section Header */}
         <Box sx={{ mb: 4 }}>
@@ -42,6 +42,7 @@ const OpportunitiesSection = () => {
               md: "1fr 1fr 1fr 1fr",
             },
             gap: 4,
+            
           }}
         >
           {opportunities.map((item, i) => (
@@ -52,12 +53,13 @@ const OpportunitiesSection = () => {
                 pl: 2,
                 display:"flex",
                 flexDirection:"column",
+                mt: 4
               }}
             >
-              <Typography variant="subHeading3" fontWeight={600}>
+              <Typography variant="subHeading3" width="90%">
                 {item.title}
               </Typography>
-              <Typography variant="para14" sx={{ mt: 1, color: "grey.200" }}>
+              <Typography variant="para14" sx={{ mt: 4, color: "grey.200" }}>
                 {item.desc}
               </Typography>
             </Box>

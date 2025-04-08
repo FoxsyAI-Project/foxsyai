@@ -4,7 +4,7 @@ import aboutImage from "../assets/images/aboutSection.png"; // replace with your
 
 const AboutSection = () => {
   return (
-    <Box sx={{ bgcolor: "#1a1a1a", color: "white", py: 8 }}>
+    <Box sx={{ bgcolor: "grey.500", color: "white", py: 8 }}>
       <Container>
         <Stack
           direction={{ xs: "column", md: "row" }}
@@ -15,10 +15,10 @@ const AboutSection = () => {
           {/* Left - Text content */}
           <Box flex={1}>
             <OrangeLine />
-            <Typography variant="subHeading1" gutterBottom>
+            <Typography variant="subHeading1" gutterBottom sx={{mb:5}}>
               What is Foxsy AI?
             </Typography>
-            <Typography variant="captionH1" sx={{ maxWidth: 800, display: "block", mb: 2 }}>
+            <Typography variant="captionH1" sx={{ maxWidth: 800, display: "block", mb: 4,mt: 4 }}>
               Cutting-edge online robotics lab, providing access to advanced simulation environments and real hardware,
               entirely accessible remotely.
             </Typography>

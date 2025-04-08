@@ -40,18 +40,18 @@ const VisionSection = () => {
                     alignSelf: "flex-start",
                   }}
                 />
-                <Typography variant="subHeading2" fontWeight="bold">
+                <Typography variant="subHeading2" fontWeight="bold" sx={{mb:4}}>
                   {item.title}
                 </Typography>
               </Box>
               
               <Stack
                 sx={{
-                  borderLeft: "2px solid #000000",
+                  borderLeft: "1px solid #21262E",
                   pl: 2,
                 }}
               >
-                <Typography variant="para20" sx={{ mb: 1, color: "grey.300" }}>
+                <Typography variant="para20" sx={{ mb: 4,  color: "grey.300" }}>
                   {item.text}
                 </Typography>
                 

@@ -62,7 +62,7 @@ const PartnersSection = () => {
       md: "repeat(9, 1fr)",   // 9 on medium and larger screens
     },
     gap: 4,
-    justifyItems: "center",
+    justifyItems: "flex-start",
     alignItems: "center",
   }}
 >

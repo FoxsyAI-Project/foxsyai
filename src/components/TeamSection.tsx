@@ -16,6 +16,7 @@ import adrianImage from "../assets/images/adrianImage.png";
 import archanaImage from "../assets/images/archanaImage.png";
 import xIcon from "../assets/images/x.svg";
 import linkedinIcon from "../assets/images/linkedin.svg";
+import OrangeLine from "./OrangeLine";
 
 
 const team = [
@@ -72,21 +73,24 @@ const TeamSection = () => {
           }}
         >
           <Box maxWidth={isMobile ? "100%" : "60%"} display="flex" flexDirection="column">
-            <Box sx={{ width: 40, height: 4, bgcolor: "#EA3807", mb: 2 }} />
+            <OrangeLine />
             <Typography variant="subHeading1" gutterBottom>
               Team
             </Typography>
+            <Box sx={{ display:"flex", flexDirection:"column", pl: 2, borderLeft: "1px solid #21262E", mt:4, mb:4}}>
             <Typography variant="subHeading3" color="primary.dark">
               Our passionate and diverse robotics team is driven by innovation,
               blending expertise in AI, automation, and engineering.
             </Typography>
-            <Typography variant="para14" sx={{ color: "grey.300", mt: 2 }}>
+            <Typography variant="para14" sx={{ color: "grey.300", mt: 3 }}>
               With limitless energy and creativity, we are pushing the
               boundaries of robotics through collaboration and cutting-edge
               solutions. With a shared vision as our foundation, we design
               intelligent, high-impact robotic systems that can now only be
               dreamed of.
             </Typography>
+            </Box>
+           
           </Box>
           {!isMobile && (
             <Box
@@ -130,22 +134,19 @@ const TeamSection = () => {
                 alt={member.name}
                 sx={{ width: 80, height: 80, borderRadius: "10px"}}
               />
-              <CardContent sx={{ px: 0 }}>
+              <CardContent sx={{ px: 0 , py:0, display: "flex", flexDirection: "column", }}>
                 <Typography
                   variant="subHeading3"
                   sx={{ color: theme.palette.primary.main, }}
                 >
                   {member.name}
                 </Typography>
-                <br />
-                <Typography variant="link14" sx={{ mb: 1 }} color="grey.300">
+                <Typography variant="link14" sx={{ mb: 3 }} color="grey.300">
                   {member.title}
                 </Typography>
-                <br />
                 <Typography variant="para12" color="grey.300">
                   {member.description}
                 </Typography>
-                <br />
                 <Box
                   sx={{
                     mt: 2,
