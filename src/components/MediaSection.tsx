@@ -11,10 +11,6 @@ import {
   import Slider from "react-slick";
   import { useState } from "react";
   import OrangeLine from "./OrangeLine";
-  import media1 from "../assets/images/foxAgent.jpg";
-  import media2 from "../assets/images/foxKeeper.jpg";
-  import media3 from "../assets/images/foxSquad.jpg";
-  import media4 from "../assets/images/foxLeague.jpg";
   import { useTheme } from "@mui/material/styles";
   
  
