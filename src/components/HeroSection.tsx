@@ -11,6 +11,12 @@ const HeroSection = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const backgroundImage = isMobile ? heroImageMobile : heroImageDesktop;
+  const socialLinks = [
+    { icon: telegramIcon, link: "https://t.me/foxsyai" },
+    { icon: tiktokIcon, link: "https://x.com/foxsy_ai" },
+    { icon: instagramIcon, link: "https://x.com/foxsy_ai" },
+    { icon: twitterIcon, link: "https://x.com/foxsy_ai" },
+  ];
 
   return (
     <Box
@@ -27,7 +33,7 @@ const HeroSection = () => {
       <Box
         sx={{
           position: "relative",
-          width: "100%",
+          width: "95%",
           maxWidth: { xs: "100vw", md: "1200px" },
           height: "100%",
           borderRadius: "40px",
@@ -39,7 +45,7 @@ const HeroSection = () => {
         }}
       >
         <Container disableGutters sx={{  position: "relative", py: 6 }} >
-          <Box sx={{ maxWidth: 600, paddingLeft: "10%" }}>
+          <Box sx={{ paddingLeft: {xs:"3%",sm:"10%"} }}>
             <Typography
               variant="h1"
               sx={{
@@ -66,6 +72,29 @@ const HeroSection = () => {
               </Typography>
             </Typography>
 
+            <Button
+                variant="contained"
+                sx={{
+                  ...theme.typography.b1,
+                  display: {
+                    xs: 'block',
+                    sm: 'block',
+                    md: 'none',
+                  },
+                  bgcolor: "#EA3807",
+                  color: "#fff",
+                  borderRadius: "999px",
+                  textTransform: "none",
+                  px: 4,
+                  py: 1.5,
+                  "&:hover": { bgcolor: "#d23100" },
+                  mt: { xs: 3, md: 0 }, // stack on small screens
+                }}
+              >
+                Get $FOXSY
+              </Button>
+
+
             {/* CTA and Social Icons aligned left and right */}
             <Box
               sx={{
@@ -79,21 +108,26 @@ const HeroSection = () => {
             >
               {/* Social Icons - Left */}
               <Stack direction="row" spacing={2}>
-                {[telegramIcon, tiktokIcon, instagramIcon, twitterIcon].map(
-                  (icon, idx) => (
-                    <img
-                      key={idx}
-                      src={icon}
-                      alt="social-icon"
-                      style={{
-                        width: 28,
-                        height: 28,
-                        filter: "invert(1)",
-                        cursor: "pointer",
-                      }}
-                    />
-                  )
-                )}
+              {socialLinks.map(({ icon, link }, idx) => (
+  <a
+    key={idx}
+    href={link}
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ display: "inline-block", marginRight: 12 }}
+  >
+    <img
+      src={icon}
+      alt="social-icon"
+      style={{
+        width: 28,
+        height: 28,
+        filter: "invert(1)",
+        cursor: "pointer",
+      }}
+    />
+  </a>
+))}
               </Stack>
 
               {/* CTA Button - Right */}
@@ -103,6 +137,11 @@ const HeroSection = () => {
                 sx={{
                   ...theme.typography.b1,
                   bgcolor: "#EA3807",
+                  display: {
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'block',
+                  },
                   color: "#fff",
                   borderRadius: "999px",
                   textTransform: "none",

@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Paper, Button, useMediaQuery } from "@mui/material";
 import Masonry from "@mui/lab/Masonry";
 import RobotLifecycle from "../assets/images/robot-lifecycle.png";
+import RobotLifeCycleMobile from "../assets/images/robot-lifecycle-M.png";
 import foxKeeper from "../assets/images/foxKeeper.jpg";
 import foxAgent from "../assets/images/foxAgent.jpg";
 import foxLeague from "../assets/images/foxLeague.jpg";
@@ -61,6 +62,7 @@ const products = [
 const ProductsSection = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const robotImage = isMobile ? RobotLifeCycleMobile : RobotLifecycle;
   
 
 const slickSettings = {
@@ -69,6 +71,7 @@ const slickSettings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
+  centerMode: true,
   arrows: false,
 };
   return (
@@ -92,7 +95,7 @@ const slickSettings = {
           </Typography>
           <Box
             component="img"
-            src={RobotLifecycle}
+            src={robotImage}
             alt="Robot lifecycle"
             sx={{ width: "100%", borderRadius: 2, mb:4 }}
           />
@@ -111,6 +114,7 @@ const slickSettings = {
               cursor: "grab",
               bgcolor: "#fff",
               color: "#000",
+              width:"80%"
             }}
           >
             {/* Image */}

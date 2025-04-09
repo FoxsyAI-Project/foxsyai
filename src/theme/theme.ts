@@ -128,7 +128,15 @@ const theme = createTheme({
         fontSize: "2.5rem",
         lineHeight: "3.75rem",
         letterSpacing: "-0.02em"
-    }
+    },
+    t5: {
+        fontFamily: "'Noto Sans', sans-serif",
+        fontWeight: 400,
+        fontSize: "0.75rem",
+        lineHeight: 1.5,
+        letterSpacing: "-0.02em",
+        verticalAlign: "middle",
+      },
   },
 });
 

@@ -5,6 +5,7 @@ import {
   IconButton,
   Dialog,
   DialogContent,
+  useMediaQuery,
 } from "@mui/material";
 import Slider from "react-slick";
 import { useState } from "react";
@@ -16,10 +17,14 @@ import singaporeImg from "../assets/images/singapore.jpg";
 import grazImg from "../assets/images/graz.jpg";
 import OrangeLine from "./OrangeLine";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { useTheme } from "@mui/material/styles";
 
 // Dummy video URL
 const dummyVideo = "https://www.youtube.com/embed/dQw4w9WgXcQ";
-
+const NagoyaVideo = "https://archive.robocup.info/app/JaSMIn/embedded.html?replay=../../Soccer/Simulation/2D/replays/RoboCup/2017/Elimination/3rdPlace/20170730111925-FRA-UNIted_1-vs-Oxsy_0.replay.gz"
+const SingaporeVideo = "https://archive.robocup.info/app/JaSMIn/embedded.html?replay=../../Soccer/Simulation/2D/replays/RoboCup/2010/Elimination/LF/201006241100-Oxsy_3-vs-WrightEagle_7.replay.gz"
+const GrazVideo = "https://archive.robocup.info/app/JaSMIn/embedded.html?replay=../../Soccer/Simulation/2D/replays/RoboCup/2009/Elimination/LF/200907051031-HELIOS2009_2-vs-Oxsy_0.replay.gz"
+const JaoaVideo = "https://archive.robocup.info/app/JaSMIn/embedded.html?replay=../../Soccer/Simulation/2D/replays/RoboCup/2014/Elimination/3rdPlace/201407241033-HELIOS2014_1-vs-Oxsy_2.replay.gz"
 const achievements = [
   {
     year: "2024",
@@ -40,42 +45,44 @@ const achievements = [
     location: "Nagoya",
     subtitle: "3rd place",
     image: nagoyaImg,
-    video: dummyVideo,
+    video: NagoyaVideo,
   },
   {
     year: "2014",
     location: "Joao Pessoa",
     subtitle: "3rd place",
     image: joaoPessoaImg,
-    video: dummyVideo,
+    video: JaoaVideo,
   },
   {
     year: "2010",
     location: "Singapore",
     subtitle: "3rd place",
     image: singaporeImg,
-    video: dummyVideo,
+    video: SingaporeVideo,
   },
   {
     year: "2009",
     location: "Graz",
     subtitle: "3rd place",
     image: grazImg,
-    video: dummyVideo,
+    video: GrazVideo,
   },
 ];
 
 const AchievementsSection = () => {
   const [open, setOpen] = useState(false);
   const [activeVideo, setActiveVideo] = useState("");
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handlePlay = (video: string) => {
     setActiveVideo(video);
     setOpen(true);
   };
 
-  
-
+  const showArrow = isMobile ? false : true;
+  const showCenterMode = isMobile ? true : false;
   
 
 
@@ -83,9 +90,10 @@ const AchievementsSection = () => {
     dots: false,
     infinite: true,
     speed: 400,
+    centerMode: showCenterMode,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: showArrow,
     responsive: [
       {
         breakpoint: 960,
@@ -121,7 +129,7 @@ const AchievementsSection = () => {
               <Box
                 sx={{
                   backgroundColor: "black",
-                  width: "90%",
+                  width: "80%",
                   borderRadius: 2,
                   overflow: "hidden",
                   position: "relative",

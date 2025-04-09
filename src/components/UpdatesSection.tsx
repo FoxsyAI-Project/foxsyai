@@ -6,11 +6,13 @@ import {
     Card,
     CardContent,
     CardMedia,
+    useMediaQuery
   } from "@mui/material";
   import Slider from "react-slick";
   import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
   import foxImg from "../assets/images/updatesDummyImage.png";
   import OrangeLine from "./OrangeLine";
+  import { useTheme } from "@mui/material/styles";
   
   const updates = new Array(6).fill({
     title: "Update title text",
@@ -18,15 +20,24 @@ import {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
     image: foxImg,
   });
+
+
   
   const UpdatesSection = () => {
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+    const showArrow = isMobile ? false : true;
+    const showCenterMode = isMobile ? true : false;
+
     const settings = {
       dots: false,
       infinite: true,
       speed: 400,
       slidesToShow: 4,
       slidesToScroll: 1,
-      arrows: true,
+      arrows: showArrow,
+      centerMode: showCenterMode,
       responsive: [
         {
           breakpoint: 1200,

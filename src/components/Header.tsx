@@ -21,6 +21,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import logo from "../assets/images/FoxsyAILogo.png";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import MvxIcon from "../assets/images/mvxLogo.png";
+import SolIcon from "../assets/images/solanaIcon.png";
 
 const Header = () => {
   const theme = useTheme();
@@ -44,9 +46,66 @@ const Header = () => {
 
   const [openHubMenu, setOpenHubMenu] = useState(false);
 
-const handleToggleHubMenu = () => {
-  setOpenHubMenu((prev) => !prev);
-};
+  const earningsLinks = [
+    {
+      label: "MVX - Stake w/ Foxsy AI",
+      url: "https://explorer.multiversx.com/identities/oxsyai",
+    },
+    { label: "MVX - Autostaking", url: "https://prelaunch.foxsy.ai/" },
+    {
+      label: "MVX - Metastaking",
+      url: "https://xexchange.com/staking/FOXSY-5d5f3e",
+    },
+    {
+      label: "MVX - Staking",
+      url: "https://xexchange.com/liquidity/FOXSYWEGLD-2a5635/create-position/pool",
+    },
+    {
+      label: "SOL - Staking",
+      url: "https://raydium.io/liquidity/increase/?mode=add&pool_id=9g33GBYw4BweTk6Bo6QbqHNsS9R8vwFSapsw7NcoZHzy",
+    },
+  ];
+
+  const tokenLinks = [
+    { label: "Bridge", url: "https://bridge.onefinity.network/" },
+    {
+      label: "MultiversX",
+      url: "https://explorer.multiversx.com/tokens/FOXSY-5d5f3e",
+    },
+    {
+      label: "Solana",
+      url: "https://solscan.io/token/CgGWS19zR5xTzgCEcW5Svsuon4hBZwzBwUFimoJStCf2",
+    },
+  ];
+
+  const play2EarnLinks = [
+    { label: "FoxKeeper", url: "https://foxkeeper.ai/" },
+    { label: "FoxAgent", url: "https://foxagent.ai/" },
+    { label: "FoxLeague", url: "https://foxleague.ai/" },
+  ];
+  
+  const ecosystemLinks = [
+    {
+      label: "Governance",
+      url: "https://docs.google.com/spreadsheets/d/1EFtC61jJD1kgcgz1KnhJ-r2RRwP6kLsUcGTK_YMPHgE/edit?gid=0#gid=0",
+    },
+    {
+      label: "Token metrics",
+      url: "https://docs.google.com/spreadsheets/d/1JWH57vvKGgzt3cmPbXrw1H14qxB1UPkT/edit?gid=252611105#gid=252611105",
+    },
+    {
+      label: "Whitepaper",
+      url: "https://project.docs.foxsy.ai/",
+    },
+    {
+      label: "Onepager",
+      url: "https://drive.google.com/file/d/1bwmAuBHYOUQUA2z0Gw8bj7XKaLXaYtOc/edit",
+    },
+  ];
+
+  const handleToggleHubMenu = () => {
+    setOpenHubMenu((prev) => !prev);
+  };
 
   return (
     <Box
@@ -63,7 +122,11 @@ const handleToggleHubMenu = () => {
       }}
     >
       <Container
-        sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
       >
         {/* Logo */}
         <Box component="img" src={logo} alt="Foxsy Logo" sx={{ height: 40 }} />
@@ -83,13 +146,22 @@ const handleToggleHubMenu = () => {
             >
               Foxsy Hub
             </Button>
-            <Typography variant="link14" sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}>
+            <Typography
+              variant="link14"
+              sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}
+            >
               What is Foxsy AI
             </Typography>
-            <Typography variant="link14" sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}>
+            <Typography
+              variant="link14"
+              sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}
+            >
               Products
             </Typography>
-            <Typography variant="link14" sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}>
+            <Typography
+              variant="link14"
+              sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}
+            >
               $FOXSY
             </Typography>
             <Button
@@ -114,68 +186,86 @@ const handleToggleHubMenu = () => {
 
         {/* Drawer for Mobile */}
         <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
-  <Box sx={{ width: 250, bgcolor: "#000", height: "100%", color: "#fff", p: 2 }}>
-    {/* Logo and Close */}
-    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
-      <Box component="img" src={logo} alt="Foxsy Logo" sx={{ height: 30 }} />
-      <IconButton onClick={toggleDrawer(false)} sx={{ color: "#fff" }}>
-        <CloseIcon />
-      </IconButton>
-    </Box>
+          <Box
+            sx={{
+              width: 250,
+              bgcolor: "#000",
+              height: "100%",
+              color: "#fff",
+              p: 2,
+            }}
+          >
+            {/* Logo and Close */}
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                mb: 2,
+              }}
+            >
+              <Box
+                component="img"
+                src={logo}
+                alt="Foxsy Logo"
+                sx={{ height: 30 }}
+              />
+              <IconButton onClick={toggleDrawer(false)} sx={{ color: "#fff" }}>
+                <CloseIcon />
+              </IconButton>
+            </Box>
 
-    {/* Navigation Items */}
-    <List>
-  {/* Expandable Foxsy Hub */}
-  <ListItemButton onClick={handleToggleHubMenu}>
-    <ListItemText primary="Foxsy Hub" />
-    {openHubMenu ? <ExpandLess /> : <ExpandMore />}
-  </ListItemButton>
+            {/* Navigation Items */}
+            <List>
+              {/* Expandable Foxsy Hub */}
+              <ListItemButton onClick={handleToggleHubMenu}>
+                <ListItemText primary="Foxsy Hub" />
+                {openHubMenu ? <ExpandLess /> : <ExpandMore />}
+              </ListItemButton>
 
-  <Collapse in={openHubMenu} timeout="auto" unmountOnExit>
-    <List component="div" disablePadding>
-      {[
-        "MVX - Stake w/ Foxsy AI",
-        "MVX - Autostaking",
-        "MVX - Metastaking",
-        "MVX - Staking",
-        "SOL - Staking",
-      ].map((item, index) => (
-        <ListItemButton key={index} sx={{ pl: 4 }}>
-          <ListItemText primary={item} />
-        </ListItemButton>
-      ))}
-    </List>
-  </Collapse>
+              <Collapse in={openHubMenu} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  {[
+                    "MVX - Stake w/ Foxsy AI",
+                    "MVX - Autostaking",
+                    "MVX - Metastaking",
+                    "MVX - Staking",
+                    "SOL - Staking",
+                  ].map((item, index) => (
+                    <ListItemButton key={index} sx={{ pl: 4 }}>
+                      <ListItemText primary={item} />
+                    </ListItemButton>
+                  ))}
+                </List>
+              </Collapse>
 
-  {/* Main navigation */}
-  {["What is Foxsy AI", "Products", "$FOXSY"].map((text, index) => (
-    <ListItemButton key={index}>
-      <ListItemText primary={text} />
-    </ListItemButton>
-  ))}
+              {/* Main navigation */}
+              {["What is Foxsy AI", "Products", "$FOXSY"].map((text, index) => (
+                <ListItemButton key={index}>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              ))}
 
-  {/* CTA Button */}
-  <Box sx={{ mt: 2, px: 2 }}>
-    <Button
-      variant="contained"
-      fullWidth
-      sx={{
-        backgroundColor: "#EA3807",
-        textTransform: "none",
-        borderRadius: 999,
-        px: 3,
-        fontWeight: 600,
-        "&:hover": { backgroundColor: "#c72f05" },
-      }}
-    >
-      Get $FOXSY
-    </Button>
-  </Box>
-</List>
-
-  </Box>
-</Drawer>
-
+              {/* CTA Button */}
+              <Box sx={{ mt: 2, px: 2 }}>
+                <Button
+                  variant="contained"
+                  fullWidth
+                  sx={{
+                    backgroundColor: "#EA3807",
+                    textTransform: "none",
+                    borderRadius: 999,
+                    px: 3,
+                    fontWeight: 600,
+                    "&:hover": { backgroundColor: "#c72f05" },
+                  }}
+                >
+                  Get $FOXSY
+                </Button>
+              </Box>
+            </List>
+          </Box>
+        </Drawer>
       </Container>
 
       {/* Dropdown Menu */}
@@ -193,56 +283,112 @@ const handleToggleHubMenu = () => {
             display: "flex",
             gap: 6,
             flexDirection: "row",
-            borderRadius: 2,
+            borderRadius: 0,
           },
         }}
       >
         {/* Earnings */}
-        <Box>
-          <Typography variant="subtitle1" fontWeight={700} sx={{ mb: 1 }}>
+        <Box display="flex" flexDirection="column">
+          <Typography variant="b1" sx={{ mb: 4, color: "white" }}>
             Earnings
           </Typography>
-          {["MVX - Stake w/ Foxsy AI", "MVX - Autostaking", "MVX - Metastaking", "MVX - Staking", "SOL - Staking"].map((item, i) => (
-            <MenuItem key={i} sx={{ color: "#ccc", fontSize: 14 }}>
-              {item}
+          {earningsLinks.map(({ label, url }, i) => (
+            <MenuItem
+              key={i}
+              component="a"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ ...theme.typography.t5, color: "#ccc", pl: 0 }}
+            >
+              {label.includes("MVX") && (
+                <img
+                  src={MvxIcon}
+                  alt="MVX Icon"
+                  style={{ marginRight: 8, width: "20px" }}
+                />
+              )}
+              {label.includes("SOL") && (
+                <img
+                  src={SolIcon}
+                  alt="SOL Icon"
+                  style={{ marginRight: 8, width: "20px" }}
+                />
+              )}
+              {label}
             </MenuItem>
           ))}
         </Box>
 
         {/* Token */}
-        <Box>
-          <Typography variant="subtitle1" fontWeight={700} sx={{ mb: 1 }}>
+        <Box display="flex" flexDirection="column">
+          <Typography variant="b1" sx={{ mb: 4, color: "white" }}>
             $FOXSY Token
           </Typography>
-          {["Bridge", "MultiversX", "Solana"].map((item, i) => (
-            <MenuItem key={i} sx={{ color: "#ccc", fontSize: 14 }}>
-              {item}
+          {tokenLinks.map(({ label, url }, i) => (
+            <MenuItem
+              key={i}
+              component="a"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ ...theme.typography.t5, color: "#ccc", pl: 0 }}
+            >
+              {label === "MultiversX" && (
+                <img
+                  src={MvxIcon}
+                  alt="MVX Icon"
+                  style={{ marginRight: 8, width: "20px" }}
+                />
+              )}
+              {label === "Solana" && (
+                <img
+                  src={SolIcon}
+                  alt="SOL Icon"
+                  style={{ marginRight: 8, width: "20px" }}
+                />
+              )}
+              {label}
             </MenuItem>
           ))}
         </Box>
 
         {/* Play2Earn */}
-        <Box>
-          <Typography variant="subtitle1" fontWeight={700} sx={{ mb: 1 }}>
+        <Box display="flex" flexDirection="column">
+          <Typography variant="b1" sx={{ mb: 4, color: "white" }}>
             Play2Earn
           </Typography>
-          {["FoxKeeper", "FoxAgent", "FoxLeague"].map((item, i) => (
-            <MenuItem key={i} sx={{ color: "#ccc", fontSize: 14 }}>
-              {item}
-            </MenuItem>
-          ))}
+          {play2EarnLinks.map(({ label, url }, i) => (
+    <MenuItem
+      key={i}
+      component="a"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{ ...theme.typography.t5, color: "#ccc", pl: 0 }}
+    >
+      {label}
+    </MenuItem>
+  ))}
         </Box>
 
         {/* Ecosystem */}
-        <Box>
-          <Typography variant="subtitle1" fontWeight={700} sx={{ mb: 1 }}>
+        <Box display="flex" flexDirection="column">
+          <Typography variant="b1" sx={{ mb: 4, color: "white" }}>
             Ecosystem
           </Typography>
-          {["Governance", "Token metrics", "Whitepaper", "Onepager"].map((item, i) => (
-            <MenuItem key={i} sx={{ color: "#ccc", fontSize: 14 }}>
-              {item}
-            </MenuItem>
-          ))}
+        {ecosystemLinks.map(({ label, url }, i) => (
+    <MenuItem
+      key={i}
+      component="a"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{ ...theme.typography.t5, color: "#ccc", pl: 0 }}
+    >
+      {label}
+    </MenuItem>
+  ))}
         </Box>
       </Menu>
     </Box>

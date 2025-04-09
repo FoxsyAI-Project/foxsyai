@@ -13,7 +13,7 @@ const AboutSection = () => {
           justifyContent="space-between"
         >
           {/* Left - Text content */}
-          <Box flex={1}>
+          <Box flex={1} sx={{p:{ xs: 1, md: 0}}}>
             <OrangeLine />
             <Typography variant="subHeading1" gutterBottom sx={{mb:5}}>
               What is Foxsy AI?

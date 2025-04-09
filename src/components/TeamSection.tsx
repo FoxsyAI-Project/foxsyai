@@ -43,7 +43,7 @@ const team = [
     description:
       "A NYC-based tech entrepreneur and consultant, Adrian holds a PhD in Physics and a Master’s in Computer Science. Passionate about startups, blockchain, and artificial intelligence, he has led tech-focused ventures driving innovation in fintech and AI.",
     image: adrianImage,
-    linkedin: "https://www.linkedin.com/in/sebastian-marian-a86b4614b/",
+    linkedin: "https://www.linkedin.com/in/adriansindile/",
   },
   {
     name: "Archana Nambiar",
@@ -51,7 +51,7 @@ const team = [
     description:
       "Dubai-based consultant and marketing entrepreneur with a unique journey from medicine to blockchain. Holding an MD, she brings a sharp analytical mind to the world of Web3, leading and launching impactful campaigns across AI, RWA, healthcare, and ecological sectors. Passionate about blockchain’s transformative potential, she thrives on driving innovation and real-world adoption.",
     image: archanaImage,
-    linkedin: "https://www.linkedin.com/in/sebastian-marian-a86b4614b/",
+    linkedin: "https://www.linkedin.com/in/archnanambiar/",
   },
 ];
 
