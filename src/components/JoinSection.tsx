@@ -31,7 +31,7 @@ import {
             }}
           >
             {/* Text Section */}
-            <Box sx={{ flex: 1, display:"flex", flexDirection:"column"}}>
+            <Box sx={{ flex: 1, display:"flex", flexDirection:"column", textAlign: {xs:"center", sm:"left"} }}>
               <Typography variant="captionH1" color="grey.300">
                 Join Foxsy AI
               </Typography>
@@ -44,7 +44,7 @@ import {
                 - JOIN US! We would love to have you along on our journey.
               </Typography>
   
-              <Stack direction="row" spacing={2} sx={{ mt: 4 }}>
+              <Stack direction="row" spacing={2} sx={{ mt: 4 }} justifyContent={{ xs: "center", sm: "flex-start" }}>
                 <IconButton component="a" href="https://t.me/foxsyai" target="_blank">
                   <Box component="img" src={TelegramIcon} alt="Telegram" sx={{ width: 24, height: 24 }} />
                 </IconButton>
@@ -54,7 +54,7 @@ import {
                 <IconButton component="a" href="https://instagram.com/foxsyai" target="_blank">
                   <Box component="img" src={InstagramIcon} alt="Instagram" sx={{ width: 24, height: 24 }} />
                 </IconButton>
-                <IconButton component="a" href="https://x.com/foxsyai" target="_blank">
+                <IconButton component="a" href="https://x.com/foxsy_ai" target="_blank">
                   <Box component="img" src={XIcon} alt="X" sx={{ width: 24, height: 24 }} />
                 </IconButton>
               </Stack>

@@ -5,6 +5,7 @@ import {
     IconButton,
     Dialog,
     DialogContent,
+    useMediaQuery
   } from "@mui/material";
   import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
   import Slider from "react-slick";
@@ -14,14 +15,25 @@ import {
   import media2 from "../assets/images/foxKeeper.jpg";
   import media3 from "../assets/images/foxSquad.jpg";
   import media4 from "../assets/images/foxLeague.jpg";
+  import { useTheme } from "@mui/material/styles";
   
-  const mediaItems = [
-    { image: media1, video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { image: media2, video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { image: media3, video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { image: media4, video: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+ 
+  const youtubeVideos = [
+    "https://www.youtube.com/watch?v=LSj4elgdMsQ",
+    "https://www.youtube.com/watch?v=6W3Z4Z0tYVg",
+    "https://www.youtube.com/watch?v=vhC4hyR03co",
+    "https://www.youtube.com/watch?v=zpsuUe2cIOA",
   ];
   
+  const mediaItems = youtubeVideos.map((url) => {
+    const videoId = new URL(url).searchParams.get("v");
+    return {
+      thumbnail: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+      video: `https://www.youtube.com/embed/${videoId}`,
+    };
+  });
+
+
   const MediaSection = () => {
     const [open, setOpen] = useState(false);
     const [activeVideo, setActiveVideo] = useState("");
@@ -30,14 +42,18 @@ import {
       setActiveVideo(video);
       setOpen(true);
     };
-  
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+    const showArrow = isMobile ? false : true;
+    const showCenterMode = isMobile ? true : false;
     const settings = {
       dots: true,
       infinite: true,
       speed: 400,
       slidesToShow: 3,
       slidesToScroll: 1,
-      arrows: true,
+      arrows: showArrow,
+      centerMode: showCenterMode,
       responsive: [
         { breakpoint: 960, settings: { slidesToShow: 2 } },
         { breakpoint: 600, settings: { slidesToShow: 1 } },
@@ -70,7 +86,7 @@ import {
                 >
                   <Box
                     component="img"
-                    src={item.image}
+                    src={item.thumbnail}
                     alt={`Media ${idx + 1}`}
                     sx={{
                       width: "100%",

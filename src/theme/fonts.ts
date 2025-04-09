@@ -19,4 +19,5 @@ export const fontFamilies = {
     link14: "'Alexandria', sans-serif",
     extra1: "'Alexandria', sans-serif",
     extra2: "'Alexandria', sans-serif",
+    t5: "'Noto Sans', sans-serif",
   };

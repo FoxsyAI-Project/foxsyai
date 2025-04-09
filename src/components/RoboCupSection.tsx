@@ -109,6 +109,7 @@ const RoboCupSection = () => {
 
           <Button
                 variant="contained"
+                onClick={() => window.open("https://www.youtube.com/watch?v=3V1SB8jhQ_8", "_blank")}
                 sx={{
                   ...theme.typography.b1,
                   bgcolor: theme.palette.primary.main,

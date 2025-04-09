@@ -91,6 +91,13 @@ declare module "@mui/material/styles" {
   interface TypographyVariantsOptions {
     extra2?: React.CSSProperties;
   }
+  interface TypographyVariants {
+    t5: React.CSSProperties;
+  }
+
+  interface TypographyVariantsOptions {
+    t5?: React.CSSProperties;
+  }
 }
 
 declare module "@mui/material/Typography" {
@@ -108,5 +115,6 @@ declare module "@mui/material/Typography" {
     link14: true;
     extra1: true;
     extra2: true;
+    t5: true;
   }
 }
