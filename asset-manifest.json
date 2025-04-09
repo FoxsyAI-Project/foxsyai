@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/foxsyai/static/css/main.3c9f0060.css",
-    "main.js": "/foxsyai/static/js/main.9c521016.js",
+    "main.js": "/foxsyai/static/js/main.4abf2959.js",
     "static/media/hero-image.png": "/foxsyai/static/media/hero-image.d6b12c192b9b60e65856.png",
     "static/media/hero-image-mobile.jpg": "/foxsyai/static/media/hero-image-mobile.4f1e17bb16bc6291eefc.jpg",
     "static/media/foxMascot.png": "/foxsyai/static/media/foxMascot.ad94e02e843ae2070b25.png",
@@ -17,6 +17,7 @@
     "static/media/foxStore.jpg": "/foxsyai/static/media/foxStore.41e0e1cc8a2b7708bfc7.jpg",
     "static/media/updatesDummyImage.png": "/foxsyai/static/media/updatesDummyImage.8a1dea7e7f69039d00df.png",
     "static/media/foxSquad.jpg": "/foxsyai/static/media/foxSquad.05a5a2cdf9a1fb9ba9d3.jpg",
+    "static/media/robot-lifecycle-M.png": "/foxsyai/static/media/robot-lifecycle-M.86c4a7195c430b7d9b46.png",
     "static/media/nagoya.jpg": "/foxsyai/static/media/nagoya.5ff3e60c6b2d51f08996.jpg",
     "static/media/foxKeeper.jpg": "/foxsyai/static/media/foxKeeper.243948610f6e501e6b0c.jpg",
     "static/media/joao-pessoa.jpg": "/foxsyai/static/media/joao-pessoa.bd6860eb6e21f1e6623e.jpg",
@@ -107,10 +108,10 @@
     "static/media/arrow-up-right.svg": "/foxsyai/static/media/arrow-up-right.27346c302e61ff1a262b0a6cdf598c2c.svg",
     "static/media/arrow-right.svg": "/foxsyai/static/media/arrow-right.66b22f17abea2ce70d73bb4151fe3b63.svg",
     "main.3c9f0060.css.map": "/foxsyai/static/css/main.3c9f0060.css.map",
-    "main.9c521016.js.map": "/foxsyai/static/js/main.9c521016.js.map"
+    "main.4abf2959.js.map": "/foxsyai/static/js/main.4abf2959.js.map"
   },
   "entrypoints": [
     "static/css/main.3c9f0060.css",
-    "static/js/main.9c521016.js"
+    "static/js/main.4abf2959.js"
   ]
 }
