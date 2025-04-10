@@ -23,6 +23,7 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import MvxIcon from "../assets/images/mvxLogo.png";
 import SolIcon from "../assets/images/solanaIcon.png";
+import BridgeIcon from "../assets/images/Bridge.png";
 
 const Header = () => {
   const theme = useTheme();
@@ -48,34 +49,27 @@ const Header = () => {
 
   const earningsLinks = [
     {
-      label: "MVX - Stake w/ Foxsy AI",
+      label: "Stake w/ Foxsy AI",
       url: "https://explorer.multiversx.com/identities/oxsyai",
     },
-    { label: "MVX - Autostaking", url: "https://prelaunch.foxsy.ai/" },
+    { label: "Autostaking", url: "https://prelaunch.foxsy.ai/" },
     {
-      label: "MVX - Metastaking",
+      label: "Metastaking",
       url: "https://xexchange.com/staking/FOXSY-5d5f3e",
     },
     {
-      label: "MVX - Staking",
+      label: "Staking",
       url: "https://xexchange.com/liquidity/FOXSYWEGLD-2a5635/create-position/pool",
     },
     {
-      label: "SOL - Staking",
+      label: "Staking",
       url: "https://raydium.io/liquidity/increase/?mode=add&pool_id=9g33GBYw4BweTk6Bo6QbqHNsS9R8vwFSapsw7NcoZHzy",
     },
   ];
 
   const tokenLinks = [
     { label: "Bridge", url: "https://bridge.onefinity.network/" },
-    {
-      label: "MultiversX",
-      url: "https://explorer.multiversx.com/tokens/FOXSY-5d5f3e",
-    },
-    {
-      label: "Solana",
-      url: "https://solscan.io/token/CgGWS19zR5xTzgCEcW5Svsuon4hBZwzBwUFimoJStCf2",
-    },
+   
   ];
 
   const play2EarnLinks = [
@@ -107,6 +101,9 @@ const Header = () => {
     setOpenHubMenu((prev) => !prev);
   };
 
+  const windowLocation = window.location;
+  const showMenu = windowLocation.pathname === "/";
+
   return (
     <Box
       sx={{
@@ -132,7 +129,7 @@ const Header = () => {
         <Box component="img" src={logo} alt="Foxsy Logo" sx={{ height: 40 }} />
 
         {/* Desktop Navigation */}
-        {!isMobile ? (
+        {!isMobile && showMenu ? (
           <Box sx={{ display: "flex", gap: 4, alignItems: "center" }}>
             <Button
               onClick={handleClick}
@@ -180,6 +177,7 @@ const Header = () => {
             </Typography>
             <Button
               variant="contained"
+              onClick={() => window.open('/get-foxsy', '_blank')}
               sx={{
                 backgroundColor: "#EA3807",
                 textTransform: "none",
@@ -192,11 +190,16 @@ const Header = () => {
               Get $FOXSY
             </Button>
           </Box>
-        ) : (
+        ) :
+        showMenu?
+        (
           <IconButton onClick={toggleDrawer(true)} sx={{ color: "#fff" }}>
             <MenuIcon />
           </IconButton>
-        )}
+        )
+      :
+      ''
+      }
 
         {/* Drawer for Mobile */}
         <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
@@ -315,20 +318,22 @@ const Header = () => {
               rel="noopener noreferrer"
               sx={{ ...theme.typography.t5, color: "#ccc", pl: 0 }}
             >
-              {label.includes("MVX") && (
-                <img
-                  src={MvxIcon}
-                  alt="MVX Icon"
-                  style={{ marginRight: 8, width: "20px" }}
-                />
-              )}
-              {label.includes("SOL") && (
+              {url.includes("raydium") ? (
                 <img
                   src={SolIcon}
                   alt="SOL Icon"
                   style={{ marginRight: 8, width: "20px" }}
                 />
-              )}
+              )
+            :
+            (
+              <img
+                src={MvxIcon}
+                alt="MVX Icon"
+                style={{ marginRight: 8, width: "20px" }}
+              />
+            )
+            }
               {label}
             </MenuItem>
           ))}
@@ -349,20 +354,14 @@ const Header = () => {
               rel="noopener noreferrer"
               sx={{ ...theme.typography.t5, color: "#ccc", pl: 0 }}
             >
-              {label === "MultiversX" && (
+              {label === "Bridge" && (
                 <img
-                  src={MvxIcon}
+                  src={BridgeIcon}
                   alt="MVX Icon"
                   style={{ marginRight: 8, width: "20px" }}
                 />
               )}
-              {label === "Solana" && (
-                <img
-                  src={SolIcon}
-                  alt="SOL Icon"
-                  style={{ marginRight: 8, width: "20px" }}
-                />
-              )}
+            
               {label}
             </MenuItem>
           ))}
