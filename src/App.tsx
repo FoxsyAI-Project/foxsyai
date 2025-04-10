@@ -32,7 +32,7 @@ function App() {
         <Header />
         <Routes>
           <Route
-            path="/"
+            path="*"
             element={
               <>
                 <HeroSection />
