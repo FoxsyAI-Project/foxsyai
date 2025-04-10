@@ -98,6 +98,13 @@ declare module "@mui/material/styles" {
   interface TypographyVariantsOptions {
     t5?: React.CSSProperties;
   }
+  interface TypographyVariants {
+    tFoxsyHeader: React.CSSProperties;
+  }
+
+  interface TypographyVariantsOptions {
+    tFoxsyHeader?: React.CSSProperties;
+  }
 }
 
 declare module "@mui/material/Typography" {
@@ -116,5 +123,6 @@ declare module "@mui/material/Typography" {
     extra1: true;
     extra2: true;
     t5: true;
+    tFoxsyHeader: true;
   }
 }

@@ -59,7 +59,7 @@ const VisionSection = () => {
                   {item.text1}
                 </Typography>
 
-                {item.title === "Principles" && (
+                {item.title === "Core Values" && (
                   <>
                     <Typography variant="para14" sx={{ color: "grey.300" }}>
                       <strong>Build</strong> connection and collaboration.

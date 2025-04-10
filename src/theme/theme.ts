@@ -137,6 +137,14 @@ const theme = createTheme({
         letterSpacing: "-0.02em",
         verticalAlign: "middle",
       },
+      tFoxsyHeader: {
+        fontFamily: "'Alexandria', sans-serif",
+        fontWeight: 700,
+        fontSize: "3.25rem",      // 52px / 16 = 3.25rem
+        lineHeight: "4.4375rem",  // 71px / 16 = 4.4375rem
+        letterSpacing: "-0.05em", // -5% is equivalent to -0.05em
+        textTransform: "uppercase",
+      },
   },
 });
 

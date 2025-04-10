@@ -17,16 +17,23 @@ const FoxsyTokenSection = () => {
     const theme = useTheme();
     const [price, setPrice] = useState<number | null>(null);
 
-  useEffect(() => {
-    axios
-      .get("https://api.multiversx.com/tokens/FOXSY-5d5f3e?fields=price")
-      .then((response) => {
-        setPrice(response.data.price);
-      })
-      .catch((error) => {
-        console.error("Error fetching token price:", error);
-      });
-  }, []);
+    useEffect(() => {
+      axios
+        .get("https://api.multiversx.com/tokens/FOXSY-5d5f3e?fields=price")
+        .then((response) => {
+          const tokenPrice = response.data?.price;
+          if (typeof tokenPrice === "number") {
+            setPrice(tokenPrice);
+          } else {
+            console.warn("Invalid token price:", tokenPrice);
+            setPrice(null); // Optional: fallback state
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching token price:", error);
+          setPrice(null); // Optional: fallback state
+        });
+    }, []);
   return (
     <Box sx={{ bgcolor: "#fff", py: 10 }} id="foxsy-token-section">
       <Container maxWidth="lg">

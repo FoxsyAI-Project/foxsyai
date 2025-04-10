@@ -21,28 +21,42 @@ import MediaSection from './components/MediaSection';
 import JoinSection from './components/JoinSection';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GetFoxsy from './components/GetFoxsy/GetFoxsy';
 
 function App() {
   return (
    <>
-   <ThemeProvider theme={theme}>
-    <Header />
-    <HeroSection />
-    <AboutSection />
-    <VisionSection />
-    <ProductsSection />
-    <RoboCupSection />
-    <FoxsyTokenSection />
-    <OpportunitiesSection />
-    <FaqSection />
-    <RoadmapSection />
-    <PartnersSection />
-    <TeamSection />
-    <AchievementsSection />
-    <UpdatesSection />
-    <MediaSection />
-    <JoinSection />
-    <Footer />
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <HeroSection />
+                <AboutSection />
+                <VisionSection />
+                <ProductsSection />
+                <RoboCupSection />
+                <FoxsyTokenSection />
+                <OpportunitiesSection />
+                <FaqSection />
+                <RoadmapSection />
+                <PartnersSection />
+                <TeamSection />
+                <AchievementsSection />
+                <UpdatesSection />
+                <MediaSection />
+                <JoinSection />
+              </>
+            }
+          />
+          <Route path="/get-foxsy" element={<GetFoxsy />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </ThemeProvider>
    </>
   );

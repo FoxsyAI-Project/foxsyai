@@ -20,4 +20,5 @@ export const fontFamilies = {
     extra1: "'Alexandria', sans-serif",
     extra2: "'Alexandria', sans-serif",
     t5: "'Noto Sans', sans-serif",
+    tFoxsyHeader: "'Alexandria', sans-serif",
   };
