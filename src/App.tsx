@@ -16,7 +16,7 @@ import TeamSection from './components/TeamSection';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import AchievementsSection from './components/AchievementsSection';
-import UpdatesSection from './components/UpdatesSection';
+// import UpdatesSection from './components/UpdatesSection';
 import MediaSection from './components/MediaSection';
 import JoinSection from './components/JoinSection';
 import Footer from './components/Footer';
@@ -47,7 +47,7 @@ function App() {
                 <PartnersSection />
                 <TeamSection />
                 <AchievementsSection />
-                <UpdatesSection />
+                {/* <UpdatesSection /> */}
                 <MediaSection />
                 <JoinSection />
               </>

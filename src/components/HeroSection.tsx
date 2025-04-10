@@ -1,5 +1,5 @@
 import { Box, Typography, Button, Stack, Container, useMediaQuery } from "@mui/material";
-import heroImageDesktop from "../assets/images/hero-image.png";
+import heroImageDesktop from "../assets/images/hero-image.jpg";
 import heroImageMobile from "../assets/images/hero-image-mobile.jpg";
 import instagramIcon from "../assets/images/instagram.svg";
 import twitterIcon from "../assets/images/x.svg";
@@ -74,6 +74,7 @@ const HeroSection = () => {
 
             <Button
                 variant="contained"
+                onClick={() => window.open('/get-foxsy', '_blank')}
                 sx={{
                   ...theme.typography.b1,
                   display: {
@@ -134,6 +135,7 @@ const HeroSection = () => {
               
               <Button
                 variant="contained"
+                onClick={() => window.open('/get-foxsy', '_blank')}
                 sx={{
                   ...theme.typography.b1,
                   bgcolor: "#EA3807",
