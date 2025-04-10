@@ -267,6 +267,7 @@ const Header = () => {
               <Box sx={{ mt: 2, px: 2 }}>
                 <Button
                   variant="contained"
+                  onClick={() => window.open('/get-foxsy', '_blank')}
                   fullWidth
                   sx={{
                     backgroundColor: "#EA3807",

@@ -239,6 +239,7 @@ const FoxsyTokenSection = () => {
             </Box>
             <Button
               variant="contained"
+              onClick={() => window.open('/get-foxsy', '_blank')}
               sx={{
                 ...theme.typography.b1,
                 bgcolor: "#EA3807",
