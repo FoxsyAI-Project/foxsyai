@@ -102,7 +102,7 @@ const Header = () => {
   };
 
   const windowLocation = window.location;
-  const showMenu = windowLocation.pathname === "/";
+  const showMenu = windowLocation.pathname !== "/get-foxsy";
 
   return (
     <Box
