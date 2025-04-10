@@ -4,7 +4,7 @@ import aboutImage from "../assets/images/aboutSection.png"; // replace with your
 
 const AboutSection = () => {
   return (
-    <Box sx={{ bgcolor: "grey.500", color: "white", py: 8 }}>
+    <Box sx={{ bgcolor: "grey.500", color: "white", py: 8 }} id="about-section">
       <Container>
         <Stack
           direction={{ xs: "column", md: "row" }}

@@ -10,11 +10,25 @@ import FoxMascot from "../assets/images/foxMascot.png";
 import OrangeLine from "./OrangeLine";
 import ArrowUpRight from "../assets/images/arrow-up-right.svg";
 import { useTheme } from "@mui/material/styles";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const FoxsyTokenSection = () => {
     const theme = useTheme();
+    const [price, setPrice] = useState<number | null>(null);
+
+  useEffect(() => {
+    axios
+      .get("https://api.multiversx.com/tokens/FOXSY-5d5f3e?fields=price")
+      .then((response) => {
+        setPrice(response.data.price);
+      })
+      .catch((error) => {
+        console.error("Error fetching token price:", error);
+      });
+  }, []);
   return (
-    <Box sx={{ bgcolor: "#fff", py: 10 }}>
+    <Box sx={{ bgcolor: "#fff", py: 10 }} id="foxsy-token-section">
       <Container maxWidth="lg">
         {/* Flex row for text + mascot */}
         <Box
@@ -206,7 +220,7 @@ const FoxsyTokenSection = () => {
                   variant="extra2"
                   sx={{ color: "secondary.main"}}
                 >
-                  $0.03187
+                {price !== null ? `$${price.toFixed(5)}` : "Loading..."}
                 </Typography>
                 <Stack direction="row" gap={1} alignItems="center">
                   <Typography variant="para14" sx={{ color: "white" }} display="flex">
@@ -240,3 +254,5 @@ const FoxsyTokenSection = () => {
 };
 
 export default FoxsyTokenSection;
+
+

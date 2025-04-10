@@ -38,7 +38,7 @@ const products = [
   },
   {
     title: "FoxDroid",
-    desc: "A competitive platform featuring humanoid robots in structured tournaments, demonstrating advanced mobility, strategy, and decision-making capabilities.",
+    desc: "Competitive humanoid robots deployed in dynamic environments with defined rules, showcasing mobility, strategy and team-based decision-making.",
     image: foxDroid,
   },
   {
@@ -75,7 +75,7 @@ const slickSettings = {
   arrows: false,
 };
   return (
-    <Box sx={{ bgcolor: "#1a1a1a", py: 8, color: "#fff" }}>
+    <Box sx={{ bgcolor: "#1a1a1a", py: 8, color: "#fff" }} id="products-section">
       <Container>
         {/* Section Header */}
         <Box sx={{ mb: 4 }}>
@@ -87,11 +87,7 @@ const slickSettings = {
             variant="para20"
             sx={{ mt: 4, mb: 6, display: "block", color: "grey.200", maxWidth: "100%" }}
           >
-            Our existing and upcoming products cover the whole spectrum of AI in
-            robotics, from games and complex simulators and digital
-            marketplaces, to hardware talking heads and mini-robots, to
-            multi-agent and biped humanoid robot teams that can collaborate to
-            achieve certain goals based on a set of rules.
+            Our existing and upcoming products cover the whole spectrum of AI in robotics, from games, complex simulators and digital marketplaces, to hardware talking heads and mini-robots, to multi-agent and humanoid robot teams that can collaborate to achieve certain goals based on a set of rules.
           </Typography>
           <Box
             component="img"

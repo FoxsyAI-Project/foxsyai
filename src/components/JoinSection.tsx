@@ -48,10 +48,10 @@ import {
                 <IconButton component="a" href="https://t.me/foxsyai" target="_blank">
                   <Box component="img" src={TelegramIcon} alt="Telegram" sx={{ width: 24, height: 24 }} />
                 </IconButton>
-                <IconButton component="a" href="https://www.tiktok.com/@foxsyai" target="_blank">
+                <IconButton component="a" href="https://www.tiktok.com/@foxsy_ai?_t=ZT-8vOZtaA1zis&_r=1" target="_blank">
                   <Box component="img" src={TiktokIcon} alt="TikTok" sx={{ width: 24, height: 24 }} />
                 </IconButton>
-                <IconButton component="a" href="https://instagram.com/foxsyai" target="_blank">
+                <IconButton component="a" href="https://www.instagram.com/foxsy_ai?igsh=NTc4MTIwNjQ2YQ==" target="_blank">
                   <Box component="img" src={InstagramIcon} alt="Instagram" sx={{ width: 24, height: 24 }} />
                 </IconButton>
                 <IconButton component="a" href="https://x.com/foxsy_ai" target="_blank">

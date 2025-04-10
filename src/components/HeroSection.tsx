@@ -13,8 +13,8 @@ const HeroSection = () => {
   const backgroundImage = isMobile ? heroImageMobile : heroImageDesktop;
   const socialLinks = [
     { icon: telegramIcon, link: "https://t.me/foxsyai" },
-    { icon: tiktokIcon, link: "https://x.com/foxsy_ai" },
-    { icon: instagramIcon, link: "https://x.com/foxsy_ai" },
+    { icon: tiktokIcon, link: "https://www.tiktok.com/@foxsy_ai?_t=ZT-8vOZtaA1zis&_r=1" },
+    { icon: instagramIcon, link: "https://www.instagram.com/foxsy_ai?igsh=NTc4MTIwNjQ2YQ==" },
     { icon: twitterIcon, link: "https://x.com/foxsy_ai" },
   ];
 

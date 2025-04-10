@@ -39,7 +39,7 @@ const RoboCupSection = () => {
   }, []);
 
   return (
-    <Box sx={{ bgcolor: "#f2f2f2", py: 10 }}>
+    <Box sx={{ bgcolor: "#f2f2f2", py: 10 }} id="robocup-section">
       <Container maxWidth="lg" sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, alignItems: "center", gap: 4 }}>
         
         {/* Text Section */}
