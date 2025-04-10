@@ -149,18 +149,32 @@ const Header = () => {
             <Typography
               variant="link14"
               sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}
+              onClick={() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" })}
+
             >
               What is Foxsy AI
             </Typography>
             <Typography
               variant="link14"
               sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}
+              onClick={() => document.getElementById("products-section")?.scrollIntoView({ behavior: "smooth" })}
+
             >
               Products
             </Typography>
             <Typography
               variant="link14"
               sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}
+              onClick={() => document.getElementById("robocup-section")?.scrollIntoView({ behavior: "smooth" })}
+
+            >
+              RoboCup
+            </Typography>
+            <Typography
+              variant="link14"
+              sx={{ cursor: "pointer", "&:hover": { color: "#EA3807" } }}
+              onClick={() => document.getElementById("foxsy-token-section")?.scrollIntoView({ behavior: "smooth" })}
+
             >
               $FOXSY
             </Typography>
@@ -322,7 +336,8 @@ const Header = () => {
 
         {/* Token */}
         <Box display="flex" flexDirection="column">
-          <Typography variant="b1" sx={{ mb: 4, color: "white" }}>
+          <Typography variant="b1" sx={{ mb: 4, color: "white" }}
+          >
             $FOXSY Token
           </Typography>
           {tokenLinks.map(({ label, url }, i) => (

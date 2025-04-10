@@ -12,8 +12,8 @@ const items = [
     text1: "Our platform brings together robotics, AI and blockchain enthusiasts worldwide to develop cutting-edge autonomous systems.",
   },
   {
-    title: "Principles",
-    text: "Our principles guide our vision and ensure technology serves humanity responsibly.",
+    title: "Core Values",
+    text: "Our core values guide our vision and ensure technology serves humanity responsibly",
   },
 ];
 

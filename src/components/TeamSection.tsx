@@ -35,7 +35,7 @@ const team = [
     description:
       "A dedicated member of early versions of our project since 2005, Dorin has been instrumental in advancing our mission to become a global leader in AI and robotics. With over 20 years of experience in software development, he has specialized in designing custom solutions that integrate robots, CNC machines and measurement tools with production KPIs.",
     image: dorinImage,
-    linkedin: "https://www.linkedin.com/in/sebastian-marian-a86b4614b/",
+    linkedin: "https://www.linkedin.com/in/dorin-luca-85a3178",
   },
   {
     name: "Adrian Sindile",
