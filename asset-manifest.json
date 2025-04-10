@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.756cd9f5.css",
-    "main.js": "/static/js/main.b0d0e14b.js",
-    "static/media/hero-image.png": "/static/media/hero-image.d6b12c192b9b60e65856.png",
+    "main.js": "/static/js/main.4168c15a.js",
+    "static/media/hero-image.jpg": "/static/media/hero-image.23c920c546c596253584.jpg",
     "static/media/hero-image-mobile.jpg": "/static/media/hero-image-mobile.4f1e17bb16bc6291eefc.jpg",
     "static/media/foxMascot.png": "/static/media/foxMascot.ad94e02e843ae2070b25.png",
     "static/media/robot-lifecycle.png": "/static/media/robot-lifecycle.30a810b82f8a12999f2d.png",
@@ -15,7 +15,6 @@
     "static/media/foxFly.png": "/static/media/foxFly.61069442ee83bc633736.png",
     "static/media/foxLeague.jpg": "/static/media/foxLeague.95aec36c760c488e46cb.jpg",
     "static/media/foxStore.jpg": "/static/media/foxStore.41e0e1cc8a2b7708bfc7.jpg",
-    "static/media/updatesDummyImage.png": "/static/media/updatesDummyImage.8a1dea7e7f69039d00df.png",
     "static/media/foxSquad.jpg": "/static/media/foxSquad.05a5a2cdf9a1fb9ba9d3.jpg",
     "static/media/robot-lifecycle-M.png": "/static/media/robot-lifecycle-M.86c4a7195c430b7d9b46.png",
     "static/media/nagoya.jpg": "/static/media/nagoya.5ff3e60c6b2d51f08996.jpg",
@@ -41,6 +40,7 @@
     "static/media/noto-sans-cyrillic-ext-400-normal.woff": "/static/media/noto-sans-cyrillic-ext-400-normal.77c43ef63fe1f74a41b6.woff",
     "static/media/noto-sans-cyrillic-ext-700-normal.woff": "/static/media/noto-sans-cyrillic-ext-700-normal.4494518197b607befd94.woff",
     "static/media/adrianImage.png": "/static/media/adrianImage.66c75ee24197b905b4c2.png",
+    "static/media/foxsyIconSmall.png": "/static/media/foxsyIconSmall.f18e4217fc72b4bc16d4.png",
     "static/media/sebastianImage.png": "/static/media/sebastianImage.cbb6349a4775aef02064.png",
     "static/media/noto-sans-cyrillic-ext-700-normal.woff2": "/static/media/noto-sans-cyrillic-ext-700-normal.ad4f89317c13fda4c18d.woff2",
     "static/media/noto-sans-cyrillic-ext-400-normal.woff2": "/static/media/noto-sans-cyrillic-ext-400-normal.7923aca3fed261d1de8b.woff2",
@@ -48,6 +48,7 @@
     "static/media/noto-sans-latin-400-normal.woff": "/static/media/noto-sans-latin-400-normal.922d5bfc3e062a052081.woff",
     "static/media/alexandria-arabic-700-normal.woff": "/static/media/alexandria-arabic-700-normal.e203e0f9dc222f9cfd33.woff",
     "static/media/alexandria-arabic-500-normal.woff": "/static/media/alexandria-arabic-500-normal.14e2e666a5a7226dfcf4.woff",
+    "static/media/bitrue.png": "/static/media/bitrue.939d6c52ebaa464b05f5.png",
     "static/media/alexandria-arabic-300-normal.woff": "/static/media/alexandria-arabic-300-normal.1e8b7b0a51a3d065b62d.woff",
     "static/media/alexandria-latin-ext-500-normal.woff": "/static/media/alexandria-latin-ext-500-normal.73c972f3021d2f2621cf.woff",
     "static/media/alexandria-latin-ext-700-normal.woff": "/static/media/alexandria-latin-ext-700-normal.97a52259ea82c1f54ccc.woff",
@@ -61,10 +62,12 @@
     "static/media/FoxsyAILogo.png": "/static/media/FoxsyAILogo.e2b5dd064379a7c6edd4.png",
     "static/media/oferoStakingLogo.png": "/static/media/oferoStakingLogo.cbfcda17e926696d1baf.png",
     "static/media/noto-sans-latin-700-normal.woff2": "/static/media/noto-sans-latin-700-normal.6d3b8182d14470a1d7e1.woff2",
+    "static/media/mexc.png": "/static/media/mexc.a9c61ad0a7dc0c2c79c9.png",
     "static/media/noto-sans-latin-400-normal.woff2": "/static/media/noto-sans-latin-400-normal.f5cd7b617bcb047bfaa4.woff2",
     "static/media/alexandria-arabic-700-normal.woff2": "/static/media/alexandria-arabic-700-normal.b13d2cb78334cbcf9cc4.woff2",
     "static/media/alexandria-arabic-300-normal.woff2": "/static/media/alexandria-arabic-300-normal.188d79bd79a6b6a753b2.woff2",
     "static/media/alexandria-arabic-500-normal.woff2": "/static/media/alexandria-arabic-500-normal.7f0bb45f68c52d7db6a7.woff2",
+    "static/media/tradeSilvania.png": "/static/media/tradeSilvania.fb0ee163a1619860e985.png",
     "static/media/alexandria-latin-700-normal.woff2": "/static/media/alexandria-latin-700-normal.125e9855a51b72865c12.woff2",
     "static/media/alexandria-latin-500-normal.woff2": "/static/media/alexandria-latin-500-normal.434ba72aebef55c72de5.woff2",
     "static/media/alexandria-latin-300-normal.woff2": "/static/media/alexandria-latin-300-normal.e5ec9464bca5a32a60b2.woff2",
@@ -109,10 +112,10 @@
     "static/media/arrow-up-right.svg": "/static/media/arrow-up-right.27346c302e61ff1a262b0a6cdf598c2c.svg",
     "static/media/arrow-right.svg": "/static/media/arrow-right.66b22f17abea2ce70d73bb4151fe3b63.svg",
     "main.756cd9f5.css.map": "/static/css/main.756cd9f5.css.map",
-    "main.b0d0e14b.js.map": "/static/js/main.b0d0e14b.js.map"
+    "main.4168c15a.js.map": "/static/js/main.4168c15a.js.map"
   },
   "entrypoints": [
     "static/css/main.756cd9f5.css",
-    "static/js/main.b0d0e14b.js"
+    "static/js/main.4168c15a.js"
   ]
 }
